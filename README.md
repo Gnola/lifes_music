@@ -6,8 +6,11 @@ Gianni Nola
 
 ## Technologies Used
 M - MongodDB / Mongoose
+
 E - Express
+
 R - React
+
 N - Node.js
 
 Data Source - [Apple Data and Privacy](https://privacy.apple.com/account)
