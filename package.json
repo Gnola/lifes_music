@@ -1,0 +1,30 @@
+{
+  "name": "mern_music",
+  "version": "1.0.0",
+  "engines": {
+    "node":"12.11.0"
+  },
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gnola/MERN_Music.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gnola/MERN_Music/issues"
+  },
+  "homepage": "https://github.com/Gnola/MERN_Music#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.0.2",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.8.1"
+  }
+}
