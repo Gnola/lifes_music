@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Test from './Test.js';
+import Header from './components/Header.js';
 
 let baseUrl = '';
 
@@ -32,6 +33,7 @@ class App extends Component {
       console.log(this.state.data);
         return (
             <div>
+              <Header />
               {this.state.data.map((item) => (
                 <Test data={item}/>
               ))}
