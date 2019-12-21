@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import Test from './Test.js';
 
-let baseUrl = 'https://cors-anywhere.herokuapp.com/https://mern-music.herokuapp.com';
+let baseUrl = '';
 
+if (process.env.NODE_ENV === 'development') { // if this process = 'development' then use the baseUrl
+  baseUrl = 'https://cors-anywhere.herokuapp.com/https://mern-music.herokuapp.com'
+} else {
+  baseUrl = 'https://cors-anywhere.herokuapp.com/https://mern-music.herokuapp.com'
+}
 
 
 class App extends Component {
