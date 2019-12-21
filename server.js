@@ -16,7 +16,7 @@ app.use('/', testController)
 
 
 
-const PORT = process.env.PORT || 3003;
+const PORT = process.env.PORT || 5000;
 const MONGODB_URI = process.env.MONGODB_URI;
 
 mongoose.connect(
@@ -28,6 +28,6 @@ mongoose.connect(
 )
 
 
-app.listen(PORT, () => {
+app.listen(5000, () => {
   console.log(`Listening on port ${PORT}`);
 })
