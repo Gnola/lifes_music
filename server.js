@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 
 const testController = require('./api/controllers/testcontroller.js')
-app.use('/', testController)
+app.use('/test', testController)
 
 
 
@@ -27,7 +27,13 @@ mongoose.connect(
   }
 )
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'))
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+  })
+}
 
-app.listen(5000, () => {
+app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 })
