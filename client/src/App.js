@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+
 import Header from './components/Header.js';
 import Main from './components/Main.js';
-import music from './Data.js';
+
+// import music from './Data.js';
+
 
 let baseUrl = '';
 
@@ -16,26 +19,30 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          data: music
+          data: [],
+          // songs: [],
+          // playlists: [],
         }
     }
 
+    fetchTest = () => {
+      fetch(`${baseUrl}/songs`)
+      .then( res => res.json())
+      .then(res => console.log(res))
+      .catch( err => console.log(err))
+    }
 
-    // fetchTest = () => {
-    //   fetch(`${baseUrl}/test`)
-    //   .then( res => res.json())
-    //   .then(res => this.setState({
-    //     data:res
-    //   }))
-    //   .catch( err => console.log(err))
-    // }
-
-                  // <button onClick={this.fetchTest}>Fetch</button>
+// READ // RUNS FETCHPOSTS ON LOAD
+  // componentDidMount () { // once component mounts...
+//   this.fetchPosts() // run the function above
+// } // check components in DEV tools - Main - state - posts - Array
 
     render() {
         return (
             <div>
               <Header />
+                <button onClick={this.fetchTest}>Fetch</button>
+
               <Main data={this.state.data} />
             </div>
         );

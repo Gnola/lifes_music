@@ -64,3 +64,21 @@ code {
   display: flex;
   justify-content: center;
 }
+
+/* PLAYLISTS */
+
+.playlist-rows {
+  border-top: 1px solid black;
+  height: 250px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+}
+.playlists {
+  border: 1px solid black;
+  width: 150px;
+  height: 150px;
+}

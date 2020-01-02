@@ -16,8 +16,8 @@ router.post('/', (req, res) => {
 router.get('/', (req, res) => {
   Song.find(
     {},
-    (err, allTests) => {
-      res.send(allTests)
+    (err, allSongs) => {
+      res.send(allSongs)
     }
   )
 })
