@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Test from './Test.js';
 import Header from './components/Header.js';
+import Main from './components/Main.js';
+import music from './Data.js';
 
 let baseUrl = '';
 
@@ -15,30 +16,27 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          data:[]
+          data: music
         }
     }
 
 
-    fetchTest = () => {
-      fetch(`${baseUrl}/test`)
-      .then( res => res.json())
-      .then(res => this.setState({
-        data:res
-      }))
-      .catch( err => console.log(err))
-    }
+    // fetchTest = () => {
+    //   fetch(`${baseUrl}/test`)
+    //   .then( res => res.json())
+    //   .then(res => this.setState({
+    //     data:res
+    //   }))
+    //   .catch( err => console.log(err))
+    // }
+
+                  // <button onClick={this.fetchTest}>Fetch</button>
 
     render() {
-      console.log(this.state.data);
         return (
             <div>
               <Header />
-              {this.state.data.map((item) => (
-                <Test data={item}/>
-              ))}
-
-              <button onClick={this.fetchTest}>Fetch</button>
+              <Main data={this.state.data} />
             </div>
         );
     }

@@ -12,16 +12,17 @@ code {
     monospace;
 }
 
-
+/* HEADER */
 .header {
   background-image: url('https://images.unsplash.com/photo-1483412033650-1015ddeb83d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80');
   background-size: cover;
   background-repeat: no-repeat;
-  height: 1000px;
+  height: 500px;
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
   color: white;
+  z-index: -1;
 }
 
   .header-text {
@@ -39,3 +40,27 @@ code {
     margin-top: 5px;
     font-style: italic;
   }
+
+/* MAIN */
+.mainbuttons {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+}
+
+/* ALL-MUSIC */
+.allmusictable {
+  width: 85%;
+  margin: auto;
+  text-align: center;
+}
+
+  td {
+    width: 33%;
+    background-color: grey;
+  }
+
+.addmusic {
+  display: flex;
+  justify-content: center;
+}
