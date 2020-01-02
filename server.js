@@ -9,8 +9,12 @@ require('dotenv').config();
 app.use(bodyParser.json());
 
 
-const testController = require('./api/controllers/testcontroller.js')
-app.use('/test', testController)
+const songController = require('./api/controllers/songcontroller.js')
+app.use('/songs', songController)
+
+const playlistController = require('./api/controllers/playlistcontroller.js')
+app.use('/playlists', playlistController)
+
 
 
 
