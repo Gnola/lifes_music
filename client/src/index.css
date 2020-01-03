@@ -82,3 +82,8 @@ code {
   width: 150px;
   height: 150px;
 }
+
+.editmusic {
+  border: 1px solid black;
+  /* display: none; */
+}

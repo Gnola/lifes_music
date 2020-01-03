@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import AllMusicSongs from './AllMusicSongs.js';
+// import EditSong from './EditSong.js'
 
 class AllMusic extends Component {
     constructor(props) {
         super(props)
         this.state = {
+          id: null,
           title:'',
           artist:'',
           album:'',
           genre:'',
+          showEdit:false,
         }
     }
 
@@ -16,11 +19,16 @@ class AllMusic extends Component {
       this.setState({
         [event.target.id] : event.target.value
       })
+
     }
 
     handleSubmit = (event) => {
       event.preventDefault()
-      this.props.addSong(this.state)
+      if (this.state.showEdit) {
+        this.props.updateSong(this.state)
+      } else if (!this.state.showEdit) {
+        this.props.addSong(this.state)
+      }
       this.setState({
         title:'',
         artist:'',
@@ -29,16 +37,49 @@ class AllMusic extends Component {
       })
     }
 
+    showEdit = (song) => {
+      this.setState({
+        showEdit: true,
+        id:song._id,
+        title:song.title,
+        artist:song.artist,
+        album:song.album,
+        genre:song.genre
+      })
+      console.log(this.state.editedSong);
+    }
+
+    closeEdit = () => {
+      this.setState({
+        showEdit:false,
+        title:'',
+        artist:'',
+        album: '',
+        genre: ''
+      })
+    }
+
+
     render() {
         return (
             <div className='allmusic'>
+            {(this.state.showEdit) ?
+              <form className='editmusic' onSubmit={this.handleSubmit}>
+                <input type='text' id='title' value={this.state.title} onChange={this.handleChange} placeholder={this.state.title}/>
+                <input type='text' id='artist' value={this.state.artist} onChange={this.handleChange} placeholder={this.state.artist}/>
+                <input type='text' id='album' value={this.state.album} onChange={this.handleChange} placeholder={this.state.album}/>
+                <input type='text' id='genre' value={this.state.genre} onChange={this.handleChange} placeholder={this.state.genre}/>
+                <input type='submit' value="Edit Song"/>
+                <button onClick={this.closeEdit}>Cancel</button>
+              </form> :
               <form className='addmusic' onSubmit={this.handleSubmit}>
                 <input type='text' id='title' value={this.state.title} onChange={this.handleChange} placeholder='Song Title'/>
                 <input type='text' id='artist' value={this.state.artist} onChange={this.handleChange} placeholder='Artist'/>
                 <input type='text' id='album' value={this.state.album} onChange={this.handleChange} placeholder='Album'/>
                 <input type='text' id='genre' value={this.state.genre} onChange={this.handleChange} placeholder='Genre'/>
-                <input type='submit' value="Add to Music List"/>
+                <input type='submit' value="Add to Music"/>
               </form>
+            }
               <table className='allmusictable'>
                 <thead>
                   <tr>
@@ -49,7 +90,7 @@ class AllMusic extends Component {
                 </thead>
                 <tbody>
                   {this.props.songs.map((song, _id) => (
-                    <AllMusicSongs key={_id} song={song} addSong={this.props.addSong} deleteSongs={this.props.deleteSongs}/>
+                    <AllMusicSongs key={_id} song={song} addSong={this.props.addSong} showEdit={this.showEdit} updateSong={this.props.updateSong} deleteSongs={this.props.deleteSongs}/>
                   ))}
                 </tbody>
               </table>

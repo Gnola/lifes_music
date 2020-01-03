@@ -38,7 +38,7 @@ class Main extends Component {
               </div>
 
               {(this.state.allMusic) ?
-                <AllMusic songs={this.props.songs} addSong={this.props.addSong} deleteSongs={this.props.deleteSongs}/>
+                <AllMusic songs={this.props.songs} addSong={this.props.addSong} updateSong={this.props.updateSong} deleteSongs={this.props.deleteSongs}/>
                 :
                 <AllPlaylists />
               }

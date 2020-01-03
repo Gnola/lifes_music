@@ -52,22 +52,23 @@ class App extends Component {
     .catch( error => console.log(error))
     }
 
-  //   updateSong = (updatedSong) => {
-  //   fetch(
-  //     `${baseUrl}/songs/${updatedSong._id}`, // using the id of the updateData which is pulled from form data
-  //     {
-  //       body: JSON.stringify(updatedSong),
-  //       method: 'PUT',
-  //       headers: {
-  //         'Accept': 'application/json, text/plain, */*',
-  //         'Content-Type': 'application/json'
-  //       }
-  //     })
-  //     .then( updatedSong => {
-  //       this.fetchSongs() // fetch for all of the data again
-  //     })
-  //     .catch( error => console.log(error) )
-  // }
+    updateSong = (editedSong) => {
+      console.log(editedSong);
+    fetch(
+      `${baseUrl}/songs/${editedSong.id}`, // using the id of the updateData which is pulled from form data
+      {
+        body: JSON.stringify(editedSong),
+        method: 'PUT',
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        }
+      })
+      .then( updatedSong => {
+        this.fetchSongs()
+      })
+      .catch( error => console.log(error) )
+  }
 
     // DELETE SONGS
     deleteSongs = (id) => {
@@ -111,12 +112,11 @@ class App extends Component {
     // }
 
     render() {
-      console.log(this.state.songs);
         return (
             <div>
               <Header />
 
-              <Main songs={this.state.songs} addSong={this.addSong} deleteSongs={this.deleteSongs}/>
+              <Main songs={this.state.songs} addSong={this.addSong} updateSong={this.updateSong} deleteSongs={this.deleteSongs}/>
 
               <button onClick={this.fetchSongs}>Fetch</button>
             </div>
