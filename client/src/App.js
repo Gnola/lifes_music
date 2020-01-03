@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import Header from './components/Header.js';
 import Main from './components/Main.js';
 
@@ -19,31 +18,107 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          data: [],
-          // songs: [],
-          // playlists: [],
+          // data: music,
+          songs: [],
+          playlists: [],
         }
     }
 
-    fetchTest = () => {
+    // GET ALL SONGS
+    fetchSongs = () => {
       fetch(`${baseUrl}/songs`)
       .then( res => res.json())
-      .then(res => console.log(res))
+      .then(res => this.setState({
+        songs:res
+      }))
       .catch( err => console.log(err))
     }
 
-// READ // RUNS FETCHPOSTS ON LOAD
-  // componentDidMount () { // once component mounts...
-//   this.fetchPosts() // run the function above
-// } // check components in DEV tools - Main - state - posts - Array
+    // ADD SONGS
+    addSong = (newSong) => {
+      fetch(`${baseUrl}/songs`,
+        {
+          body: JSON.stringify(newSong),
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json'
+          }
+        })
+      .then( newSong => { return newSong.json()})
+      .then( jsonedSong => this.setState({
+          songs:[jsonedSong,...this.state.songs]
+        }))
+    .catch( error => console.log(error))
+    }
+
+  //   updateSong = (updatedSong) => {
+  //   fetch(
+  //     `${baseUrl}/songs/${updatedSong._id}`, // using the id of the updateData which is pulled from form data
+  //     {
+  //       body: JSON.stringify(updatedSong),
+  //       method: 'PUT',
+  //       headers: {
+  //         'Accept': 'application/json, text/plain, */*',
+  //         'Content-Type': 'application/json'
+  //       }
+  //     })
+  //     .then( updatedSong => {
+  //       this.fetchSongs() // fetch for all of the data again
+  //     })
+  //     .catch( error => console.log(error) )
+  // }
+
+    // DELETE SONGS
+    deleteSongs = (id) => {
+    fetch(
+      `${baseUrl}/songs/${id}`,
+      {
+        method: 'DELETE',
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        }
+      })
+      .then( json => {
+        this.setState(prevState => {
+          const songs = prevState.songs.filter(songs => songs._id !== id)
+          return { songs }
+        })
+      })
+      .catch( error => console.log(error) )
+  }
+
+
+    componentDidMount () {
+      this.fetchSongs()
+    }
+
+    // fetchPlaylists = () => {
+    //   fetch(`${baseUrl}/playlists`)
+    //   .then( res => res.json())
+    //   .then(res => this.setState({
+    //     playlists: res
+    //   }))
+    //   .catch( err => console.log(err))
+    // }
+
+    // addSongToPlaylist = (song) => {
+    //   this.setState({
+    //     playlists:[song,...this.state.playlists]
+    //   })
+    //   console.log(this.state.playlists);
+    // }
 
     render() {
+      console.log(this.state.songs);
         return (
             <div>
               <Header />
-                <button onClick={this.fetchTest}>Fetch</button>
 
-              <Main data={this.state.data} />
+              <Main songs={this.state.songs} addSong={this.addSong} deleteSongs={this.deleteSongs}/>
+
+              <button onClick={this.fetchSongs}>Fetch</button>
             </div>
         );
     }

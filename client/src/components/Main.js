@@ -6,8 +6,8 @@ class Main extends Component {
     constructor(props) {
       super(props)
       this.state = {
-        allMusic:false,
-        allPlaylists: true,
+        allMusic:true,
+        allPlaylists: false,
       }
     }
 
@@ -21,26 +21,28 @@ class Main extends Component {
     }
 
     // Show Playlists
-    showAllPlaylists = () => {
-      this.setState({
-        allMusic: false,
-        allPlaylists: true
-      })
-      console.log(this.state.allPlaylists);
-    }
+    // showAllPlaylists = () => {
+    //   this.setState({
+    //     allMusic: false,
+    //     allPlaylists: true
+    //   })
+    //   console.log(this.state.allPlaylists);
+    // }
 
     render() {
         return (
             <div>
               <div className='mainbuttons'>
-              <button onClick={this.showAllPlaylists}>All Playlists</button>
+                <button onClick={this.showAllPlaylists}>All Playlists</button>
                 <button onClick={this.showAllMusic}>All Music</button>
               </div>
+
               {(this.state.allMusic) ?
-                <AllMusic data={this.props.data}/>
+                <AllMusic songs={this.props.songs} addSong={this.props.addSong} deleteSongs={this.props.deleteSongs}/>
                 :
                 <AllPlaylists />
               }
+
             </div>
         );
     }

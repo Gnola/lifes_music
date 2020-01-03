@@ -8,9 +8,10 @@ class AllMusicSongs extends Component {
     render() {
         return (
           <tr className='allmusicsong'>
-            <td>{this.props.song.song}</td>
+            <td onClick={() => {this.props.addSong(this.props.song)}}>{this.props.song.title}</td>
             <td>{this.props.song.artist}</td>
             <td>{this.props.song.album}</td>
+            <td onClick={() => {this.props.deleteSongs(this.props.song._id)}}>X</td>
           </tr>
         );
     }
