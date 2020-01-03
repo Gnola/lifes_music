@@ -28,7 +28,8 @@ class AllMusic extends Component {
       if (this.state.showEdit) {
         this.props.updateSong(this.state)
         this.setState({
-          showEdit:false
+          showEdit:false,
+          subGenres:[this.state.subGenres,...this.state.subGenres]
         })
       } else if (!this.state.showEdit) {
         this.props.addSong(this.state)
@@ -80,7 +81,7 @@ class AllMusic extends Component {
                 <textarea type='text' id='subGenres' value={this.state.subGenres} onChange={this.handleChange} placeholder={this.state.subGenres}/>
                 <input type='submit' value="Edit Song"/>
                 <button onClick={this.closeEdit}>Cancel</button>
-                </form>
+              </form>
               </div>:
               <form className='addmusic' onSubmit={this.handleSubmit}>
                 <input type='text' id='title' value={this.state.title} onChange={this.handleChange} placeholder='Song Title'/>

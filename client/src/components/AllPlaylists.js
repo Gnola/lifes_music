@@ -8,9 +8,14 @@ class AllPlaylists extends Component {
     render() {
         return (
             <div className='allplaylists'>
+
               <div className='playlist-rows' id='timeofday'>
                 <h3>Time of Day</h3>
-                <div className='playlists'>Morning</div>
+                <div className='playlists'>Morning
+                  {this.props.morning.map((song) => (
+                    <p>{song.title}</p>
+                  ))}
+                </div>
                 <div className='playlists'>Afternoon</div>
                 <div className='playlists'>Evening</div>
                 <div className='playlists'>Night</div>

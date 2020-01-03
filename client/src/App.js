@@ -21,6 +21,7 @@ class App extends Component {
           // data: music,
           songs: [],
           playlists: [],
+          morning: [],
         }
     }
 
@@ -90,9 +91,20 @@ class App extends Component {
       .catch( error => console.log(error) )
   }
 
+  checkGenre = () => {
+    for (var i = 0; i < this.state.songs.length; i++) {
+      if (this.state.songs[i].subGenres == 'Metal' || this.state.songs[i].subGenres == 'Roots Reggae') {
+        this.state.morning.push(this.state.songs[i]);
+      }
+    }
+    console.log(this.state.subGenreArray);
+    console.log(this.state.songs);
+    console.log(this.state.morning);
+  }
 
     componentDidMount () {
       this.fetchSongs()
+      // this.checkGenre()
     }
 
     // fetchPlaylists = () => {
@@ -114,11 +126,9 @@ class App extends Component {
     render() {
         return (
             <div>
+              <button onClick={this.checkGenre}>Check Genre</button>
               <Header />
-
-              <Main songs={this.state.songs} addSong={this.addSong} updateSong={this.updateSong} deleteSongs={this.deleteSongs}/>
-
-              <button onClick={this.fetchSongs}>Fetch</button>
+              <Main songs={this.state.songs} morning={this.state.morning} addSong={this.addSong} updateSong={this.updateSong} deleteSongs={this.deleteSongs}/>
             </div>
         );
     }

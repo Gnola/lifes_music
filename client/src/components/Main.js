@@ -21,13 +21,12 @@ class Main extends Component {
     }
 
     // Show Playlists
-    // showAllPlaylists = () => {
-    //   this.setState({
-    //     allMusic: false,
-    //     allPlaylists: true
-    //   })
-    //   console.log(this.state.allPlaylists);
-    // }
+    showAllPlaylists = () => {
+      this.setState({
+        allMusic: false,
+        allPlaylists: true
+      })
+    }
 
     render() {
         return (
@@ -40,7 +39,7 @@ class Main extends Component {
               {(this.state.allMusic) ?
                 <AllMusic songs={this.props.songs} addSong={this.props.addSong} updateSong={this.props.updateSong} deleteSongs={this.props.deleteSongs}/>
                 :
-                <AllPlaylists />
+                <AllPlaylists morning={this.props.morning} />
               }
 
             </div>
