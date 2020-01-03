@@ -7,14 +7,15 @@ class AllMusic extends Component {
     constructor(props) {
         super(props)
         this.state = {
+          showEdit:false,
           id: null,
           title:'',
           artist:'',
           album:'',
           genre:'',
-          showEdit:false,
         }
     }
+
 
     // SHOW EDIT MODAL
     showEdit = (song) => {
@@ -41,15 +42,10 @@ class AllMusic extends Component {
 
 
   render() {
-    console.log(this.state);
     return (
       <div className='all-music'>
-        {(this.state.showEdit)
-          ?
-          <EditSong editedSong={this.state} updateSong={this.props.updateSong} closeEdit={this.closeEdit}/>
-          :
-          <NewSong addSong={this.props.addSong}/>
-        }
+        {(this.state.showEdit) ? <EditSong editedSong={this.state} updateSong={this.props.updateSong} closeEdit={this.closeEdit}/> : null}
+        {(this.props.showAdd) ? <NewSong addSong={this.props.addSong} closeAdd={this.props.closeAdd}/> : null}
         <table className='all-music-table'>
           <thead>
             <tr>

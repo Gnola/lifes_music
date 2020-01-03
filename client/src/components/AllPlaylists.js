@@ -1,8 +1,29 @@
 import React, { Component } from 'react';
+import Morning from './playlists/Morning.js';
 
 class AllPlaylists extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+          morning:false,
+          afternoon:false,
+          evening:false,
+          night:false,
+        }
+    }
+
+    // MORNING
+    showMorning = () => {
+      this.setState({
+        morning: !this.state.morning
+      })
+    }
+
+    // AFTERNOON
+    showAfternoon = () => {
+      this.setState({
+        afternoon: !this.state.afternoon
+      })
     }
 
   render() {
@@ -10,14 +31,18 @@ class AllPlaylists extends Component {
       <div className='all-playlists'>
         <div className='playlist-rows' id='timeofday'>
           <h3>Time of Day</h3>
-          <div className='playlists'>Morning
-            {this.props.morning.map((song) => (
-              <p>{song.title}</p>
-            ))}
+          <div className='playlists' onClick={this.showMorning}>
+            <h3>Morning</h3>
+            {(this.state.morning) ? <Morning morningSongs={this.props.morningSongs} /> : null}
           </div>
-          <div className='playlists'>Afternoon</div>
-          <div className='playlists'>Evening</div>
-          <div className='playlists'>Night</div>
+          <div className='playlists' onClick={this.showAfternoon}>
+          </div>
+          <div className='playlists'>
+            <h3>Evening</h3>
+          </div>
+          <div className='playlists'>
+            <h3>Night</h3>
+          </div>
         </div>
         <div className='playlist-rows' id='timeofyear'>
           <h3>Seasons</h3>

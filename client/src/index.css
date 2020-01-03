@@ -8,6 +8,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* APP */
+
 
 /* HEADER */
 .header {
@@ -37,14 +39,12 @@ body {
 }
 
 
-
 /* MAIN */
 .main-buttons {
   display: flex;
   justify-content: center;
   margin: 15px;
 }
-
 
 
 /* ALL-MUSIC */
@@ -59,13 +59,12 @@ td {
   background-color: grey;
 }
 
-.add-music {
-  display: flex;
-  justify-content: center;
+
+/* ALL PLAYLISTS */
+.all-playlists {
+
 }
 
-
-/* PLAYLISTS */
 .playlist-rows {
   border-top: 1px solid black;
   height: 250px;
@@ -78,14 +77,16 @@ td {
 }
 .playlists {
   border: 1px solid black;
-  width: 150px;
-  height: 150px;
+  width: 175px;
+  height: 175px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
-
-
-.edit-music-modal {
+/* MODALS */
+.modal-container {
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
@@ -96,7 +97,7 @@ td {
   background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
 }
 
-.edit-music {
+.edit-song-modal {
   border: 1px solid #888;
   border-radius: 2px;
   background-color: white;
@@ -109,3 +110,42 @@ td {
   align-items: center;
   flex-direction: column;
 }
+  .edit-song-form {
+
+  }
+
+.new-song-modal {
+  border: 1px solid #888;
+  border-radius: 2px;
+  background-color: white;
+  margin: 25% auto;
+  padding: 20px;
+  width: 60%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+  .new-song-form {
+    display: flex;
+    justify-content: center;
+  }
+
+.playlist-modal {
+  border: 1px solid #888;
+  border-radius: 2px;
+  background-color: white;
+  margin: 25% auto;
+  padding: 20px;
+  width: 60%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+  .playlist-table {
+    
+  }

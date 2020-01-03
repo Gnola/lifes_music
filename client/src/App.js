@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Header from './components/Header.js';
 import Main from './components/Main.js';
 
-// import music from './Data.js';
 
 let baseUrl = '';
 
@@ -17,10 +16,8 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          // data: music,
           songs: [],
-          playlists: [],
-          morning: [],
+          morningSongs: [],
         }
     }
 
@@ -94,19 +91,33 @@ class App extends Component {
         error => console.log(error) )
     }
 
+    checkGenre = () => {
+      for (var i = 0; i < this.state.songs.length; i++) {
+        if (this.state.songs[i].genre === 'Rock') {
+          this.state.morningSongs.push(this.state.songs[i])
+        }
+      }
+    }
+
 
     // ON LOAD
     componentDidMount () {
       this.fetchSongs()
-      // this.checkGenre()
+      this.checkGenre()
     }
 
 
     render() {
       return (
         <div>
+          <button onClick={this.checkGenre}>Check</button>
           <Header />
-          <Main songs={this.state.songs} morning={this.state.morning} addSong={this.addSong} updateSong={this.updateSong} deleteSongs={this.deleteSongs}/>
+          <Main
+            songs={this.state.songs}
+            morningSongs={this.state.morningSongs}
+            addSong={this.addSong}
+            updateSong={this.updateSong}
+            deleteSongs={this.deleteSongs}/>
         </div>
       );
     }

@@ -30,14 +30,17 @@ class NewSong extends Component {
 
   render() {
     return (
-      <div>
-        <form className='add-music' onSubmit={this.handleSubmit}>
-          <input type='text' id='title' value={this.state.title} onChange={this.handleChange} placeholder='Song Title'/>
-          <input type='text' id='artist' value={this.state.artist} onChange={this.handleChange} placeholder='Artist'/>
-          <input type='text' id='album' value={this.state.album} onChange={this.handleChange} placeholder='Album'/>
-          <input type='text' id='genre' value={this.state.genre} onChange={this.handleChange} placeholder='Genre'/>
-          <input type='submit' value="Add to Music"/>
-        </form>
+      <div className='modal-container'>
+        <div className='new-song-modal'>
+          <form className='new-song-form' onSubmit={this.handleSubmit}>
+            <input type='text' id='title' value={this.state.title} onChange={this.handleChange} placeholder='Song Title'/>
+            <input type='text' id='artist' value={this.state.artist} onChange={this.handleChange} placeholder='Artist'/>
+            <input type='text' id='album' value={this.state.album} onChange={this.handleChange} placeholder='Album'/>
+            <input type='text' id='genre' value={this.state.genre} onChange={this.handleChange} placeholder='Genre'/>
+            <input type='submit' value="Add to Music"/>
+            <button onClick={this.props.closeAdd}>Cancel</button>
+          </form>
+        </div>
       </div>
     );
   }
