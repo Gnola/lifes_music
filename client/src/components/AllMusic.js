@@ -11,6 +11,7 @@ class AllMusic extends Component {
           artist:'',
           album:'',
           genre:'',
+          subGenres:[],
           showEdit:false,
         }
     }
@@ -26,6 +27,9 @@ class AllMusic extends Component {
       event.preventDefault()
       if (this.state.showEdit) {
         this.props.updateSong(this.state)
+        this.setState({
+          showEdit:false
+        })
       } else if (!this.state.showEdit) {
         this.props.addSong(this.state)
       }
@@ -33,7 +37,8 @@ class AllMusic extends Component {
         title:'',
         artist:'',
         album: '',
-        genre: ''
+        genre: '',
+        subGenres:''
       })
     }
 
@@ -44,9 +49,10 @@ class AllMusic extends Component {
         title:song.title,
         artist:song.artist,
         album:song.album,
-        genre:song.genre
+        genre:song.genre,
+        subGenres:song.subGenres,
       })
-      console.log(this.state.editedSong);
+      console.log(this.state.subGenres);
     }
 
     closeEdit = () => {
@@ -55,7 +61,8 @@ class AllMusic extends Component {
         title:'',
         artist:'',
         album: '',
-        genre: ''
+        genre: '',
+        subGenres:'',
       })
     }
 
@@ -64,19 +71,23 @@ class AllMusic extends Component {
         return (
             <div className='allmusic'>
             {(this.state.showEdit) ?
+              <div className='editmusicmodal'>
               <form className='editmusic' onSubmit={this.handleSubmit}>
                 <input type='text' id='title' value={this.state.title} onChange={this.handleChange} placeholder={this.state.title}/>
                 <input type='text' id='artist' value={this.state.artist} onChange={this.handleChange} placeholder={this.state.artist}/>
                 <input type='text' id='album' value={this.state.album} onChange={this.handleChange} placeholder={this.state.album}/>
                 <input type='text' id='genre' value={this.state.genre} onChange={this.handleChange} placeholder={this.state.genre}/>
+                <textarea type='text' id='subGenres' value={this.state.subGenres} onChange={this.handleChange} placeholder={this.state.subGenres}/>
                 <input type='submit' value="Edit Song"/>
                 <button onClick={this.closeEdit}>Cancel</button>
-              </form> :
+                </form>
+              </div>:
               <form className='addmusic' onSubmit={this.handleSubmit}>
                 <input type='text' id='title' value={this.state.title} onChange={this.handleChange} placeholder='Song Title'/>
                 <input type='text' id='artist' value={this.state.artist} onChange={this.handleChange} placeholder='Artist'/>
                 <input type='text' id='album' value={this.state.album} onChange={this.handleChange} placeholder='Album'/>
                 <input type='text' id='genre' value={this.state.genre} onChange={this.handleChange} placeholder='Genre'/>
+                <input type='text' id='subGenres' value={this.state.subGenres} onChange={this.handleChange} placeholder='Sub-Genres'/>
                 <input type='submit' value="Add to Music"/>
               </form>
             }
@@ -86,6 +97,8 @@ class AllMusic extends Component {
                     <th>Song</th>
                     <th>Artist</th>
                     <th>Album</th>
+                    <th>Genre</th>
+                    <th>Sub-Genres</th>
                   </tr>
                 </thead>
                 <tbody>

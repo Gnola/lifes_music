@@ -56,7 +56,7 @@ code {
 }
 
   td {
-    width: 33%;
+    width: 20%;
     background-color: grey;
   }
 
@@ -83,7 +83,27 @@ code {
   height: 150px;
 }
 
+.editmusicmodal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+}
+
 .editmusic {
-  border: 1px solid black;
-  /* display: none; */
+  border: 1px solid #888;
+  border-radius: 2px;
+  background-color: white;
+  margin: 25% auto;
+  padding: 20px;
+  width: 60%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
