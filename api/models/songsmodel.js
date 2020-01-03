@@ -6,9 +6,12 @@ const songSchema = new mongoose.Schema({
   artist: String,
   album: String,
   genre: String,
-  subGenres: [String]
+  mood: String,
+  energy: String,
+  where: String,
+  what: String,
 })
 
 
-const Song = mongoose.model('Song', songSchema);
-module.exports = Song
+const Songs = mongoose.model('Song', songSchema);
+module.exports = Songs

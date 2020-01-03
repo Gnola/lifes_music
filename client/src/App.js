@@ -23,7 +23,7 @@ class App extends Component {
 
     // READ
     fetchSongs = () => {
-      fetch( `${baseUrl}/songs` )
+      fetch( `${baseUrl}/allsongs` )
       .then(
         res => res.json())
       .then(
@@ -36,7 +36,8 @@ class App extends Component {
 
     // CREATE
     addSong = (newSong) => {
-      fetch( `${baseUrl}/songs`,
+      console.log(newSong);
+      fetch( `${baseUrl}/allsongs`,
         {
           body: JSON.stringify(newSong),
           method: 'POST',
@@ -57,7 +58,7 @@ class App extends Component {
     // UPDATE
     updateSong = (editedSong) => {
       console.log(editedSong);
-      fetch( `${baseUrl}/songs/${editedSong.id}`,
+      fetch( `${baseUrl}/allsongs/${editedSong.id}`,
         {
           body: JSON.stringify(editedSong),
           method: 'PUT',
@@ -73,7 +74,7 @@ class App extends Component {
 
     // DELETE
     deleteSongs = (id) => {
-      fetch( `${baseUrl}/songs/${id}`,
+      fetch( `${baseUrl}/allsongs/${id}`,
         {
           method: 'DELETE',
           headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'}

@@ -8,23 +8,34 @@ class NewSong extends Component {
         artist:'',
         album:'',
         genre:'',
+        mood:'',
+        energy:'',
+        where:'',
+        what:'',
       }
     }
 
     handleChange = (event) => {
       this.setState({
-        [event.target.id] : event.target.value
+        [event.target.id] : event.target.value,
       })
     }
 
+
     handleSubmit = (event) => {
       event.preventDefault()
+      console.log(this.state);
       this.props.addSong(this.state)
+      this.props.closeAdd()
       this.setState({
         title:'',
         artist:'',
         album: '',
         genre: '',
+        mood:'',
+        energy:'',
+        where:'',
+        what:'',
       })
     }
 
@@ -37,6 +48,10 @@ class NewSong extends Component {
             <input type='text' id='artist' value={this.state.artist} onChange={this.handleChange} placeholder='Artist'/>
             <input type='text' id='album' value={this.state.album} onChange={this.handleChange} placeholder='Album'/>
             <input type='text' id='genre' value={this.state.genre} onChange={this.handleChange} placeholder='Genre'/>
+            <input type='text' id='mood' value={this.state.mood} onChange={this.handleChange} placeholder='Sad, Happy or Between'/>
+            <input type='text' id='energy' value={this.state.energy} onChange={this.handleChange} placeholder='Low, Medium or High'/>
+            <input type='text' id='where' value={this.state.where} onChange={this.handleChange} placeholder='Home, Driving or Outside'/>
+            <input type='text' id='what' value={this.state.what} onChange={this.handleChange} placeholder='Relaxed, Busy or Active'/>
             <input type='submit' value="Add to Music"/>
             <button onClick={this.props.closeAdd}>Cancel</button>
           </form>
