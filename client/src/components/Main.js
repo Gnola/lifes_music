@@ -17,7 +17,6 @@ class Main extends Component {
         allMusic: true,
         allPlaylists: false
       })
-      console.log(this.state.allMusic);
     }
 
     // Show Playlists
@@ -29,21 +28,22 @@ class Main extends Component {
     }
 
     render() {
-        return (
-            <div>
-              <div className='mainbuttons'>
-                <button onClick={this.showAllPlaylists}>All Playlists</button>
-                <button onClick={this.showAllMusic}>All Music</button>
-              </div>
+      return (
+        <div>
+          <div className='main-buttons'>
+            <button onClick={this.showAllPlaylists}>All Playlists</button>
+            <button onClick={this.showAllMusic}>All Music</button>
+          </div>
 
-              {(this.state.allMusic) ?
-                <AllMusic songs={this.props.songs} addSong={this.props.addSong} updateSong={this.props.updateSong} deleteSongs={this.props.deleteSongs}/>
-                :
-                <AllPlaylists morning={this.props.morning} />
-              }
+          {(this.state.allMusic)
+            ?
+            <AllMusic songs={this.props.songs} addSong={this.props.addSong} updateSong={this.props.updateSong} deleteSongs={this.props.deleteSongs}/>
+            :
+            <AllPlaylists morning={this.props.morning} />
+          }
 
-            </div>
-        );
+        </div>
+      );
     }
 }
 
