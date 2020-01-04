@@ -128,9 +128,6 @@ class App extends Component {
     }
 
   checkCategories = () => {
-    // for (var i = 0; i < this.state.songs.length; i++) {
-    //   console.log(this.state.songs[i].energy);
-    // }
     for (var i = 0; i < this.state.songs.length; i++) {
       if (this.state.songs[i].energy.toLowerCase() === 'low' && this.state.songs[i].what.toLowerCase() === 'light') {
         this.state.morningSongs.push(this.state.songs[i])
