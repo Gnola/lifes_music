@@ -9,6 +9,9 @@ class EditSong extends Component {
           artist:this.props.editedSong.artist,
           album:this.props.editedSong.album,
           genre:this.props.editedSong.genre,
+          energy:this.props.editedSong.energy,
+          what:this.props.editedSong.what,
+          mood:this.props.editedSong.mood,
         }
     }
 
@@ -30,10 +33,13 @@ class EditSong extends Component {
           <div className='modal-container'>
             <div className='edit-song-modal'>
               <form className='edit-song-form' onSubmit={this.handleSubmit}>
-                <input type='text' id='title' value={this.state.title} onChange={this.handleChange} placeholder={this.state.title}/>
-                <input type='text' id='artist' value={this.state.artist} onChange={this.handleChange} placeholder={this.state.artist}/>
-                <input type='text' id='album' value={this.state.album} onChange={this.handleChange} placeholder={this.state.album}/>
-                <input type='text' id='genre' value={this.state.genre} onChange={this.handleChange} placeholder={this.state.genre}/>
+                <label>Song Title<input type='text' id='title' value={this.state.title} onChange={this.handleChange} placeholder={this.state.title}/></label>
+                <label>Artist<input type='text' id='artist' value={this.state.artist} onChange={this.handleChange} placeholder={this.state.artist}/></label>
+                <label>Album<input type='text' id='album' value={this.state.album} onChange={this.handleChange} placeholder={this.state.album}/></label>
+                <label>Genre<input type='text' id='genre' value={this.state.genre} onChange={this.handleChange} placeholder={this.state.genre}/></label>
+                <label>Energy Level<input type='text' id='energy' value={this.state.energy} onChange={this.handleChange} placeholder={this.state.energy}/></label>
+                <label>Song Weight<input type='text' id='what' value={this.state.what} onChange={this.handleChange} placeholder={this.state.what}/></label>
+                <label>Mood<input type='text' id='mood' value={this.state.mood} onChange={this.handleChange} placeholder={this.state.mood}/></label>
                 <input type='submit' value="Edit Song"/>
                 <button onClick={this.props.closeEdit}>Cancel</button>
               </form>

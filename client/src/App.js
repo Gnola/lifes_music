@@ -18,6 +18,19 @@ class App extends Component {
         this.state = {
           songs: [],
           morningSongs: [],
+          afternoonSongs: [],
+          eveningSongs: [],
+          nighttimeSongs: [],
+          springSongs: [],
+          summerSongs: [],
+          fallSongs: [],
+          winterSongs: [],
+          woodSongs:[],
+          beachSongs:[],
+          fieldSongs:[],
+          sunshineSongs: [],
+          rainSongs: [],
+          cloudSongs:[],
         }
     }
 
@@ -36,7 +49,6 @@ class App extends Component {
 
     // CREATE
     addSong = (newSong) => {
-      console.log(newSong);
       fetch( `${baseUrl}/allsongs`,
         {
           body: JSON.stringify(newSong),
@@ -85,40 +97,101 @@ class App extends Component {
             prevState => {
               const songs = prevState.songs.filter(songs => songs._id !== id)
               return { songs }
-            }
-          )
+            })
         })
       .catch(
         error => console.log(error) )
     }
 
-    checkGenre = () => {
-      for (var i = 0; i < this.state.songs.length; i++) {
-        if (this.state.songs[i].genre === 'Rock') {
-          this.state.morningSongs.push(this.state.songs[i])
-        }
-      }
-    }
-
-
     // ON LOAD
     componentDidMount () {
       this.fetchSongs()
-      this.checkGenre()
     }
+
+    clearCategories = () => {
+      this.setState({
+        morningSongs: [],
+        afternoonSongs: [],
+        eveningSongs: [],
+        nighttimeSongs: [],
+        springSongs: [],
+        summerSongs: [],
+        fallSongs: [],
+        winterSongs: [],
+        woodSongs:[],
+        beachSongs:[],
+        fieldSongs:[],
+        sunshineSongs: [],
+        rainSongs: [],
+        cloudSongs:[],
+      })
+    }
+
+  checkCategories = () => {
+    // for (var i = 0; i < this.state.songs.length; i++) {
+    //   console.log(this.state.songs[i].energy);
+    // }
+    for (var i = 0; i < this.state.songs.length; i++) {
+      if (this.state.songs[i].energy.toLowerCase() === 'low' && this.state.songs[i].what.toLowerCase() === 'light') {
+        this.state.morningSongs.push(this.state.songs[i])
+      }
+      else if (this.state.songs[i].energy.toLowerCase() === 'high' && this.state.songs[i].what.toLowerCase() === 'medium') {
+        this.state.afternoonSongs.push(this.state.songs[i])
+      }
+      else if (this.state.songs[i].energy.toLowerCase() === 'medium' && this.state.songs[i].what.toLowerCase() === 'medium') {
+        this.state.eveningSongs.push(this.state.songs[i])
+      }
+      else if (this.state.songs[i].energy.toLowerCase() === 'low' && this.state.songs[i].what.toLowerCase() === 'heavy') {
+        this.state.nighttimeSongs.push(this.state.songs[i])
+      }
+      else if (this.state.songs[i].energy.toLowerCase() === 'medium' && this.state.songs[i].what.toLowerCase() === 'light') {
+        this.state.springSongs.push(this.state.songs[i])
+      }
+      else if (this.state.songs[i].energy.toLowerCase() === 'high' && this.state.songs[i].what.toLowerCase() === 'light') {
+        this.state.summerSongs.push(this.state.songs[i])
+      }
+      else if (this.state.songs[i].energy.toLowerCase() === 'medium' && this.state.songs[i].what.toLowerCase() === 'medium') {
+        this.state.fallSongs.push(this.state.songs[i])
+      }
+      else if (this.state.songs[i].energy.toLowerCase() === 'low' && this.state.songs[i].what.toLowerCase() === 'heavy') {
+        this.state.winterSongs.push(this.state.songs[i])
+      }
+      else if (this.state.songs[i].energy.toLowerCase() === 'high' && this.state.songs[i].what.toLowerCase() === 'light') {
+        this.state.sunshineSongs.push(this.state.songs[i])
+      }
+      else if (this.state.songs[i].energy.toLowerCase() === 'low' && this.state.songs[i].what.toLowerCase() === 'heavy') {
+        this.state.rainSongs.push(this.state.songs[i])
+      }
+      else if (this.state.songs[i].energy.toLowerCase() === 'medium' && this.state.songs[i].what.toLowerCase() === 'medium') {
+        this.state.cloudSongs.push(this.state.songs[i])
+      }
+      else if (this.state.songs[i].energy.toLowerCase() === 'medium' && this.state.songs[i].what.toLowerCase() === 'light') {
+        this.state.woodSongs.push(this.state.songs[i])
+      }
+      else if (this.state.songs[i].energy.toLowerCase() === 'low' && this.state.songs[i].what.toLowerCase() === 'light') {
+        this.state.beachSongs.push(this.state.songs[i])
+      }
+      else if (this.state.songs[i].energy.toLowerCase() === 'high' && this.state.songs[i].what.toLowerCase() === 'medium') {
+        this.state.fieldSongs.push(this.state.songs[i])
+      }
+    }
+    console.log(this.state);
+  }
+
 
 
     render() {
       return (
         <div>
-          <button onClick={this.checkGenre}>Check</button>
           <Header />
           <Main
             songs={this.state.songs}
             morningSongs={this.state.morningSongs}
             addSong={this.addSong}
             updateSong={this.updateSong}
-            deleteSongs={this.deleteSongs}/>
+            deleteSongs={this.deleteSongs}
+            checkCategories={this.checkCategories}
+            clearCategories={this.clearCategories}/>
         </div>
       );
     }

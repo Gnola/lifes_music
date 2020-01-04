@@ -32,6 +32,7 @@ class Main extends Component {
         allMusic: true,
         allPlaylists: false
       })
+      this.props.clearCategories()
     }
 
     // Show Playlists
@@ -40,6 +41,7 @@ class Main extends Component {
         allMusic: false,
         allPlaylists: true
       })
+      this.props.checkCategories()
     }
 
     render() {
@@ -48,9 +50,8 @@ class Main extends Component {
           <div className='main-buttons'>
             <button onClick={this.showAllMusic}>All Music</button>
             <button onClick={this.showAllPlaylists}>All Playlists</button>
-            <button onClick={this.showAdd}>Add Music</button>
           </div>
-
+          {(this.state.allMusic) ? <button className='add-song-button' onClick={this.showAdd}>Add Music</button> : null}
           {(this.state.allMusic)
             ?
             <AllMusic songs={this.props.songs} addSong={this.props.addSong} updateSong={this.props.updateSong} deleteSongs={this.props.deleteSongs} showAdd={this.state.showAdd} closeAdd={this.closeAdd}/>

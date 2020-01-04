@@ -13,6 +13,9 @@ class AllMusic extends Component {
           artist:'',
           album:'',
           genre:'',
+          energy:'',
+          what:'',
+          mood:''
         }
     }
 
@@ -26,6 +29,9 @@ class AllMusic extends Component {
         artist:song.artist,
         album:song.album,
         genre:song.genre,
+        energy:song.energy,
+        what:song.what,
+        mood:song.mood,
       })
     }
 
@@ -37,6 +43,9 @@ class AllMusic extends Component {
         artist:'',
         album: '',
         genre: '',
+        energy:'',
+        what:'',
+        mood:'',
       })
     }
 
@@ -53,6 +62,9 @@ class AllMusic extends Component {
               <th>Artist</th>
               <th>Album</th>
               <th>Genre</th>
+              <th>Energy Level</th>
+              <th>Song Weight</th>
+              <th>Mood</th>
             </tr>
           </thead>
           <tbody>
