@@ -1,5 +1,18 @@
 import React, { Component } from 'react';
 import Morning from './playlists/Morning.js';
+import Afternoon from './playlists/Afternoon.js';
+import Evening from './playlists/Evening.js';
+import Nighttime from './playlists/Nighttime.js';
+import Spring from './playlists/Spring.js';
+import Summer from './playlists/Summer.js';
+import Fall from './playlists/Fall.js';
+import Winter from './playlists/Winter.js';
+import Sunshine from './playlists/Sunshine.js';
+import Rain from './playlists/Rain.js';
+import Clouds from './playlists/Clouds.js';
+import Woods from './playlists/Woods.js';
+import Beach from './playlists/Beach.js';
+import Fields from './playlists/Fields.js';
 
 class AllPlaylists extends Component {
     constructor(props) {
@@ -8,7 +21,17 @@ class AllPlaylists extends Component {
           morning:false,
           afternoon:false,
           evening:false,
-          night:false,
+          nighttime:false,
+          spring:false,
+          summer:false,
+          fall:false,
+          winter:false,
+          sunshine:false,
+          rain:false,
+          clouds:false,
+          woods:false,
+          beach:false,
+          fields:false
         }
     }
 
@@ -18,11 +41,82 @@ class AllPlaylists extends Component {
         morning: !this.state.morning
       })
     }
-
     // AFTERNOON
     showAfternoon = () => {
       this.setState({
         afternoon: !this.state.afternoon
+      })
+    }
+    // EVENING
+    showEvening = () => {
+      this.setState({
+        evening: !this.state.evening
+      })
+    }
+    // NIGHTTIME
+    showNighttime = () => {
+      this.setState({
+        nighttime: !this.state.nighttime
+      })
+    }
+    // SPRING
+    showSpring = () => {
+      this.setState({
+        spring: !this.state.spring
+      })
+    }
+    // SUMMER
+    showSummer = () => {
+      this.setState({
+        summer: !this.state.summer
+      })
+    }
+    // FALL
+    showFall = () => {
+      this.setState({
+        fall: !this.state.fall
+      })
+    }
+    // WINTER
+    showWinter = () => {
+      this.setState({
+        winter: !this.state.winter
+      })
+    }
+    // SUNSHINE
+    showSunshine = () => {
+      this.setState({
+        sunshine: !this.state.sunshine
+      })
+    }
+    // RAIN
+    showRain = () => {
+      this.setState({
+        rain: !this.state.rain
+      })
+    }
+    // CLOUDS
+    showClouds = () => {
+      this.setState({
+        clouds: !this.state.clouds
+      })
+    }
+    // WOODS
+    showWoods = () => {
+      this.setState({
+        woods: !this.state.woods
+      })
+    }
+    // BEACH
+    showBeach = () => {
+      this.setState({
+        beach: !this.state.beach
+      })
+    }
+    // FIELDS
+    showFields = () => {
+      this.setState({
+        fields: !this.state.fields
       })
     }
 
@@ -35,30 +129,53 @@ class AllPlaylists extends Component {
             {(this.state.morning) ? <Morning morningSongs={this.props.morningSongs} /> : null}
           </div>
           <div className='playlists' onClick={this.showAfternoon}> <h3>Afternoon</h3>
+            {(this.state.afternoon) ? <Afternoon afternoonSongs={this.props.afternoonSongs} /> : null}
           </div>
-          <div className='playlists'><h3>Evening</h3>
+          <div className='playlists' onClick={this.showEvening}> <h3>Evening</h3>
+            {(this.state.evening) ? <Evening eveningSongs={this.props.eveningSongs} /> : null}
           </div>
-          <div className='playlists'><h3>Night</h3>
+          <div className='playlists' onClick={this.showNighttime}> <h3>Nighttime</h3>
+            {(this.state.nighttime) ? <Nighttime nighttimeSongs={this.props.nighttimeSongs} /> : null}
           </div>
         </div>
         <div className='playlist-rows' id='seasons'>
           <h3>Seasons</h3>
-          <div className='playlists'>Spring</div>
-          <div className='playlists'>Summer</div>
-          <div className='playlists'>Fall</div>
-          <div className='playlists'>Winter</div>
+          <div className='playlists' onClick={this.showSpring}> <h3>Spring</h3>
+            {(this.state.spring) ? <Spring springSongs={this.props.springSongs} /> : null}
+          </div>
+          <div className='playlists' onClick={this.showSummer}> <h3>Summer</h3>
+            {(this.state.summer) ? <Summer summerSongs={this.props.summerSongs} /> : null}
+          </div>
+          <div className='playlists' onClick={this.showFall}> <h3>Fall</h3>
+            {(this.state.fall) ? <Fall fallSongs={this.props.fallSongs} /> : null}
+          </div>
+          <div className='playlists' onClick={this.showWinter}> <h3>Winter</h3>
+            {(this.state.winter) ? <Winter winterSongs={this.props.winterSongs} /> : null}
+          </div>
         </div>
         <div className='playlist-rows' id='weather'>
           <h3>Weather</h3>
-          <div className='playlists'>Sunshine</div>
-          <div className='playlists'>Rain</div>
-          <div className='playlists'>Clouds</div>
+          <div className='playlists' onClick={this.showSunshine}> <h3>Sunshine</h3>
+            {(this.state.sunshine) ? <Sunshine sunshineSongs={this.props.sunshineSongs} /> : null}
+          </div>
+          <div className='playlists' onClick={this.showRain}> <h3>Rain</h3>
+            {(this.state.rain) ? <Rain rainSongs={this.props.rainSongs} /> : null}
+          </div>
+          <div className='playlists' onClick={this.showClouds}> <h3>Clouds</h3>
+            {(this.state.clouds) ? <Clouds cloudSongs={this.props.cloudSongs} /> : null}
+          </div>
         </div>
         <div className='playlist-rows' id='location'>
           <h3>Locations</h3>
-          <div className='playlists'>Woods</div>
-          <div className='playlists'>Beach</div>
-          <div className='playlists'>Open Fields</div>
+          <div className='playlists' onClick={this.showWoods}> <h3>Woods</h3>
+            {(this.state.woods) ? <Woods woodSongs={this.props.woodSongs} /> : null}
+          </div>
+          <div className='playlists' onClick={this.showBeach}> <h3>Beach</h3>
+            {(this.state.beach) ? <Beach beachSongs={this.props.beachSongs} /> : null}
+          </div>
+          <div className='playlists' onClick={this.showFields}> <h3>Fields</h3>
+            {(this.state.fields) ? <Fields fieldSongs={this.props.fieldSongs} /> : null}
+          </div>
         </div>
       </div>
     );

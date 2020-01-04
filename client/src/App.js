@@ -183,12 +183,26 @@ class App extends Component {
           <Header />
           <Main
             songs={this.state.songs}
-            morningSongs={this.state.morningSongs}
             addSong={this.addSong}
             updateSong={this.updateSong}
             deleteSongs={this.deleteSongs}
             checkCategories={this.checkCategories}
-            clearCategories={this.clearCategories}/>
+            clearCategories={this.clearCategories}
+            morningSongs={this.state.morningSongs}
+            afternoonSongs={this.state.afternoonSongs}
+            eveningSongs={this.state.eveningSongs}
+            nighttimeSongs={this.state.nighttimeSongs}
+            springSongs={this.state.springSongs}
+            summerSongs={this.state.summerSongs}
+            fallSongs={this.state.fallSongs}
+            winterSongs={this.state.winterSongs}
+            sunshineSongs={this.state.sunshineSongs}
+            rainSongs={this.state.rainSongs}
+            cloudSongs={this.state.cloudSongs}
+            woodSongs={this.state.woodSongs}
+            beachSongs={this.state.beachSongs}
+            fieldSongs={this.state.fieldSongs}
+          />
         </div>
       );
     }

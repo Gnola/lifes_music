@@ -54,9 +54,31 @@ class Main extends Component {
           {(this.state.allMusic) ? <button className='add-song-button' onClick={this.showAdd}>Add Music</button> : null}
           {(this.state.allMusic)
             ?
-            <AllMusic songs={this.props.songs} addSong={this.props.addSong} updateSong={this.props.updateSong} deleteSongs={this.props.deleteSongs} showAdd={this.state.showAdd} closeAdd={this.closeAdd}/>
+            <AllMusic
+              songs={this.props.songs}
+              addSong={this.props.addSong}
+              updateSong={this.props.updateSong}
+              deleteSongs={this.props.deleteSongs}
+              showAdd={this.state.showAdd}
+              closeAdd={this.closeAdd}
+            />
             :
-            <AllPlaylists morningSongs={this.props.morningSongs} />
+            <AllPlaylists
+              morningSongs={this.props.morningSongs}
+              afternoonSongs={this.props.afternoonSongs}
+              eveningSongs={this.props.eveningSongs}
+              nighttimeSongs={this.props.nighttimeSongs}
+              springSongs={this.props.springSongs}
+              summerSongs={this.props.summerSongs}
+              fallSongs={this.props.fallSongs}
+              winterSongs={this.props.winterSongs}
+              sunshineSongs={this.props.sunshineSongs}
+              rainSongs={this.props.rainSongs}
+              cloudSongs={this.props.cloudSongs}
+              woodSongs={this.props.woodSongs}
+              beachSongs={this.props.beachSongs}
+              fieldSongs={this.props.fieldSongs}
+            />
           }
 
         </div>
