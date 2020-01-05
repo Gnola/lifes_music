@@ -37,9 +37,9 @@ class EditSong extends Component {
                 <label>Artist<input type='text' id='artist' value={this.state.artist} onChange={this.handleChange} placeholder={this.state.artist}/></label>
                 <label>Album<input type='text' id='album' value={this.state.album} onChange={this.handleChange} placeholder={this.state.album}/></label>
                 <label>Genre<input type='text' id='genre' value={this.state.genre} onChange={this.handleChange} placeholder={this.state.genre}/></label>
-                <label>Energy Level<input type='text' id='energy' value={this.state.energy} onChange={this.handleChange} placeholder={this.state.energy}/></label>
-                <label>Song Weight<input type='text' id='what' value={this.state.what} onChange={this.handleChange} placeholder={this.state.what}/></label>
-                <label>Mood<input type='text' id='mood' value={this.state.mood} onChange={this.handleChange} placeholder={this.state.mood}/></label>
+                <label>Energy Level<input type='number' min="0" max='10' id='energy' value={this.state.energy} onChange={this.handleChange} placeholder={this.state.energy}/></label>
+                <label>Song Weight<input type='number' min="0" max='10' id='what' value={this.state.what} onChange={this.handleChange} placeholder={this.state.what}/></label>
+                <label>Mood<input type='number' min="0" max='10' id='mood' value={this.state.mood} onChange={this.handleChange} placeholder={this.state.mood}/></label>
                 <input type='submit' value="Edit Song"/>
                 <button onClick={this.props.closeEdit}>Cancel</button>
               </form>

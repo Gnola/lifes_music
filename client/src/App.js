@@ -31,6 +31,7 @@ class App extends Component {
           sunshineSongs: [],
           rainSongs: [],
           cloudSongs:[],
+          whereArray:[]
         }
     }
 
@@ -49,6 +50,7 @@ class App extends Component {
 
     // CREATE
     addSong = (newSong) => {
+      console.log(newSong);
       fetch( `${baseUrl}/allsongs`,
         {
           body: JSON.stringify(newSong),
@@ -62,7 +64,8 @@ class App extends Component {
       .then(
         jsonedSong => this.setState({
           songs:[jsonedSong,...this.state.songs]
-        }))
+        })
+      )
       .catch(
         error => console.log(error))
     }
@@ -125,6 +128,7 @@ class App extends Component {
         rainSongs: [],
         cloudSongs:[],
       })
+      console.log(this.state);
     }
 
   checkCategories = () => {
@@ -175,11 +179,128 @@ class App extends Component {
     console.log(this.state);
   }
 
+  testAgain = () => {
+    for (var i = 0; i < this.state.songs.length; i++) {
+      if (this.state.songs[i].energy <=4 && this.state.songs[i].what >=6) {
+        this.state.morningSongs.push(this.state.songs[i])
+      }
+      if (this.state.songs[i].energy >=6 && this.state.songs[i].what >=7) {
+        this.state.afternoonSongs.push(this.state.songs[i])
+      }
+      if (this.state.songs[i].energy >=4 && this.state.songs[i].energy <=6 && this.state.songs[i].what >=4 && this.state.songs[i].what <=7) {
+        this.state.eveningSongs.push(this.state.songs[i])
+      }
+      if (this.state.songs[i].energy <=3 && this.state.songs[i].what <=4) {
+        this.state.nighttimeSongs.push(this.state.songs[i])
+      }
+      if (this.state.songs[i].energy >=5 && this.state.songs[i].what >=6) {
+        this.state.sunshineSongs.push(this.state.songs[i])
+      }
+      if (this.state.songs[i].energy <=3 && this.state.songs[i].what <=4) {
+        this.state.rainSongs.push(this.state.songs[i])
+      }
+      if (this.state.songs[i].energy <=5 && this.state.songs[i].what <=5) {
+        this.state.cloudSongs.push(this.state.songs[i])
+      }
+      if (this.state.songs[i].energy <=6 && this.state.songs[i].what >=6) {
+        this.state.springSongs.push(this.state.songs[i])
+      }
+      if (this.state.songs[i].energy >=6 && this.state.songs[i].what >=6) {
+        this.state.summerSongs.push(this.state.songs[i])
+      }
+      if (this.state.songs[i].energy <=5 && this.state.songs[i].what <=5) {
+        this.state.fallSongs.push(this.state.songs[i])
+      }
+      if (this.state.songs[i].energy <=4 && this.state.songs[i].what <=4) {
+        this.state.winterSongs.push(this.state.songs[i])
+      }
+      if (this.state.songs[i].energy <=5 && this.state.songs[i].what <=5) {
+        this.state.woodSongs.push(this.state.songs[i])
+      }
+      if (this.state.songs[i].energy >=5 && this.state.songs[i].energy <=7 && this.state.songs[i].what >=5 && this.state.songs[i].what <=8) {
+        this.state.beachSongs.push(this.state.songs[i])
+      }
+      if (this.state.songs[i].energy >=5 && this.state.songs[i].what >=5) {
+        this.state.fieldSongs.push(this.state.songs[i])
+      }
+    }
+    console.log(this.state);
+  }
 
+  // testAgain = () => {
+  //   for (var i = 0; i < this.state.songs.length; i++) {
+  //     if (this.state.songs[i].energy <=4 && this.state.songs[i].what >=5) {
+  //       this.state.morningSongs.push(this.state.songs[i])
+  //     }
+  //     else if (this.state.songs[i].energy >=6 && this.state.songs[i].what >=6) {
+  //       this.state.afternoonSongs.push(this.state.songs[i])
+  //     }
+  //     else if (this.state.songs[i].energy <=6 && this.state.songs[i].what >=4) {
+  //       this.state.eveningSongs.push(this.state.songs[i])
+  //     }
+  //     else if (this.state.songs[i].energy <=4 && this.state.songs[i].what <=4) {
+  //       this.state.nighttimeSongs.push(this.state.songs[i])
+  //     }
+  //   }
+  //   console.log(this.state);
+  // }
+
+  // testAgain = () => {
+  //   for (var i = 0; i < this.state.songs.length; i++) {
+  //     let sum = +this.state.songs[i].energy + +this.state.songs[i].what + +this.state.songs[i].mood + +this.state.songs[i].where
+  //     let average = sum / 3
+  //     let roundedAverage = average.toFixed(2)
+  //     console.log(this.state.songs[i].title +' has an average of ' + roundedAverage + ' and a sum of ' + sum);
+  //     if (roundedAverage >=3.33 && roundedAverage <=7.33 && sum >=10 && sum <=22 && this.state.songs[i].energy <=4 && this.state.songs[i].what >=5) {
+  //       this.state.morningSongs.push(this.state.songs[i])
+  //     }
+  //     else if (roundedAverage >=5.33 && roundedAverage <=9.33 && sum >=16 && sum <=28 && this.state.songs[i].energy >=6 && this.state.songs[i].what >=6) {
+  //       this.state.afternoonSongs.push(this.state.songs[i])
+  //     }
+  //     else if (roundedAverage >=3 && roundedAverage <=7 && sum >=9 && sum <=21 && this.state.songs[i].energy <=6 && this.state.songs[i].what >=4) {
+  //       this.state.eveningSongs.push(this.state.songs[i])
+  //     }
+  //     else if (roundedAverage >=1 && roundedAverage <=5 && sum >=3 && sum <=15 && this.state.songs[i].energy <=4 && this.state.songs[i].what <=4) {
+  //       this.state.nighttimeSongs.push(this.state.songs[i])
+  //     }
+  //     else if (roundedAverage >=4.66 && roundedAverage <=8.66 && sum >=14 && sum <=26) {
+  //       this.state.springSongs.push(this.state.songs[i])
+  //     }
+  //     else if (roundedAverage >=6 && roundedAverage <=10 && sum >=18 && sum <=30) {
+  //       this.state.summerSongs.push(this.state.songs[i])
+  //     }
+  //     else if (roundedAverage >=3.33 && roundedAverage <=7.33 && sum >=10 && sum <=22) {
+  //       this.state.fallSongs.push(this.state.songs[i])
+  //     }
+  //     else if (roundedAverage >=0 && roundedAverage <=4 && sum >=0 && sum <=4) {
+  //       this.state.winterSongs.push(this.state.songs[i])
+  //     }
+  //     else if (roundedAverage >=6 && roundedAverage <=10 && sum >=18 && sum <=30) {
+  //       this.state.sunshineSongs.push(this.state.songs[i])
+  //     }
+  //     else if (roundedAverage >=1 && roundedAverage <=5 && sum >=3 && sum <=15) {
+  //       this.state.rainSongs.push(this.state.songs[i])
+  //     }
+  //     else if (roundedAverage >=3.66 && roundedAverage <=7.66 && sum >=11 && sum <=23) {
+  //       this.state.cloudSongs.push(this.state.songs[i])
+  //     }
+  //     else if (roundedAverage >=2.33 && roundedAverage <=6.33 && sum >=7 && sum <=19) {
+  //       this.state.woodSongs.push(this.state.songs[i])
+  //     }
+  //     else if (roundedAverage >=5 && roundedAverage <=9 && sum >=15 && sum <=27) {
+  //       this.state.beachSongs.push(this.state.songs[i])
+  //     }
+  //     else if (roundedAverage >=4.66 && roundedAverage <=8.66 && sum >=14 && sum <=26) {
+  //       this.state.fieldSongs.push(this.state.songs[i])
+  //     }
+  //   }
+  //   console.log(this.state);
+  // }
 
     render() {
       return (
         <div>
+          <button onClick={this.testAgain}>CheckAgain</button>
           <Header />
           <Main
             songs={this.state.songs}
