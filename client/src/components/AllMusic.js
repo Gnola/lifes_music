@@ -12,10 +12,10 @@ class AllMusic extends Component {
           title:'',
           artist:'',
           album:'',
-          genre:'',
+          // genre:'',
           energy:'',
           what:'',
-          mood:''
+          // mood:''
         }
     }
 
@@ -28,10 +28,10 @@ class AllMusic extends Component {
         title:song.title,
         artist:song.artist,
         album:song.album,
-        genre:song.genre,
+        // genre:song.genre,
         energy:song.energy,
         what:song.what,
-        mood:song.mood,
+        // mood:song.mood,
       })
     }
 
@@ -42,12 +42,13 @@ class AllMusic extends Component {
         title:'',
         artist:'',
         album: '',
-        genre: '',
+        // genre: '',
         energy:'',
         what:'',
-        mood:'',
+        // mood:'',
       })
     }
+
 
 
   render() {
@@ -55,16 +56,15 @@ class AllMusic extends Component {
       <div className='all-music'>
         {(this.state.showEdit) ? <EditSong editedSong={this.state} updateSong={this.props.updateSong} closeEdit={this.closeEdit}/> : null}
         {(this.props.showAdd) ? <NewSong addSong={this.props.addSong} closeAdd={this.props.closeAdd}/> : null}
+
         <table className='all-music-table'>
           <thead>
             <tr>
               <th>Song</th>
               <th>Artist</th>
               <th>Album</th>
-              <th>Genre</th>
               <th>Energy Level</th>
               <th>Song Weight</th>
-              <th>Mood</th>
             </tr>
           </thead>
           <tbody>

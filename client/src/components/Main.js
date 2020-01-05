@@ -8,7 +8,7 @@ class Main extends Component {
       this.state = {
         allMusic:true,
         allPlaylists: false,
-        showAdd: false
+        showAdd: false,
       }
     }
 
@@ -44,9 +44,10 @@ class Main extends Component {
       this.props.checkCategories()
     }
 
+
     render() {
       return (
-        <div>
+        <div className='main-div'>
           <div className='main-buttons'>
             <button onClick={this.showAllMusic}>All Music</button>
             <button onClick={this.showAllPlaylists}>All Playlists</button>
@@ -61,6 +62,8 @@ class Main extends Component {
               deleteSongs={this.props.deleteSongs}
               showAdd={this.state.showAdd}
               closeAdd={this.closeAdd}
+              addAnother={this.addAnother}
+              another={this.state.another}
             />
             :
             <AllPlaylists

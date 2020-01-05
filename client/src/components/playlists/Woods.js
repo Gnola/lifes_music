@@ -12,7 +12,6 @@ class Woods extends Component {
                 <th>Song</th>
                 <th>Artist</th>
                 <th>Album</th>
-                <th>Genre</th>
               </tr>
             </thead>
             <tbody>
@@ -21,7 +20,6 @@ class Woods extends Component {
                   <td>{song.title}</td>
                   <td>{song.artist}</td>
                   <td>{song.album}</td>
-                  <td>{song.genre}</td>
                 </tr>
               ))}
             </tbody>

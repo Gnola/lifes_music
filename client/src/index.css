@@ -6,6 +6,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: tan;
+
 }
 
 /* APP */
@@ -40,6 +42,11 @@ body {
 
 
 /* MAIN */
+.main-div {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 10%;
+}
 .main-buttons {
   display: flex;
   justify-content: center;
@@ -49,14 +56,21 @@ body {
 
 /* ALL-MUSIC */
 .all-music-table {
-  width: 85%;
+  width: 90%;
   margin: auto;
   text-align: center;
+  background: grey;
+
 }
 
-td {
-  width: 20%;
-  background-color: grey;
+.primary {
+  width: 30%;
+  color: black;
+}
+
+.secondary {
+  width: 8%;
+  color: blue;
 }
 
 
