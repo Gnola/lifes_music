@@ -6,11 +6,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: tan;
+
 }
-
-/* APP */
-
 
 /* HEADER */
 .header {
@@ -41,100 +38,96 @@ body {
 
 
 /* MAIN */
-.main-div {
-
-}
-.main-buttons {
-  display: flex;
-  justify-content: center;
-  margin: 15px;
+.main {
+  border: 3px solid black;
 }
 
-
-/* ALL-MUSIC */
-.all-music-table {
-  width: 90%;
-  margin: auto;
-  text-align: center;
-  background: grey;
-}
-
-.primary {
-  width: 30%;
-  color: black;
-}
-
-.secondary {
-  width: 8%;
-  color: blue;
-}
+  .main-buttons {
+    border: 2px solid blue;
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+  }
 
 
-/* ALL PLAYLISTS */
-.all-playlists {
+    /* ALL-MUSIC */
+    .all-music {
+      border: 2px solid blue;
+      width: 75%;
+      margin: auto;
+      background: whitesmoke;
+    }
 
-}
+      .all-music-table {
+        border: 1px solid yellow;
+        width: 100%;
+        margin: auto;
+        text-align: center;
+      }
+        th, td {
+          text-align: center;
+        }
+        th {
+          border-bottom: none;
+        }
+        .primary {
+          width: 25%;
+          padding: 0;
+          color: black;
+          cursor: pointer;
+        }
+        .secondary {
+          width: 8%;
+          color: blue;
+        }
+        .delete-button {
+          border-bottom: none;
+          padding: 0;
+          cursor: pointer;
+        }
 
-.playlist-rows {
-  border-top: 1px solid black;
-  height: 250px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 80%;
-  margin: auto;
-}
-.playlists {
-  border: 1px solid grey;
-  border-radius: 2px;
-  width: 200px;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-position: center;
-  background-size: cover;
-  cursor: pointer;
-}
-.playlists > h3 {
-  width: 100%;
-  height: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  /* background-color: rgba(0, 0, 0, 0.4); */
-}
+    /* ALL PLAYLISTS */
+    .all-playlists {
+      border: 2px solid blue;
+    }
+    .playlist-rows {
+      border-top: 1px solid black;
+      height: 300px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 80%;
+      margin: auto;
+    }
+    .playlist-rows > h3 {
+      margin-bottom: 0;
+      width: 20%;
+    }
+    .playlists {
+      border: 1px solid grey;
+      border-radius: 2px;
+      margin: 0px 10px 0px 10px;
+      width: 30%;
+      height: 85%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-position: center;
+      background-size: cover;
+      cursor: pointer;
+    }
+    .playlists > h3 {
+      width: 100%;
+      height: 50%;
+      margin-bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      /* background-color: rgba(0, 0, 0, 0.4); */
+    }
 
-#morning {
-  background-image: url('https://images.unsplash.com/photo-1465488867967-ffb57e7f0a89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');}
-#afternoon {
-  background-image: url('https://images.unsplash.com/photo-1476616853026-24c1f0309646?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80');}
-#evening {
-  background-image: url('https://images.unsplash.com/photo-1531604250646-2f0e818c4f06?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=632&q=80');}
-#night {
-  background-image: url('https://images.unsplash.com/photo-1498590880827-3f79fdcd7fbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80');}
-#spring {
-  background-image: url('https://images.unsplash.com/photo-1516205651411-aef33a44f7c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80');}
-#summer {
-  background-image: url('https://images.unsplash.com/photo-1532347922424-c652d9b7208e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80');}
-#fall {
-  background-image: url('https://images.unsplash.com/photo-1467649165350-bdae46d9779b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80');}
-#winter {
-  background-image: url('https://images.unsplash.com/photo-1482331336918-c80fab6c90f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80');}
-#sunshine {
-  background-image: url('https://images.unsplash.com/12/sun-trees.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');}
-#rain {
-  background-image: url('https://images.unsplash.com/photo-1501691223387-dd0500403074?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80');}
-#clouds {
-  background-image: url('https://images.unsplash.com/photo-1500740516770-92bd004b996e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80');}
-#woods {
-  background-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');}
-#beach {
-  background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80');}
-#fields {
-  background-image: url('https://images.unsplash.com/photo-1420641637488-df930ea6ec80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80');}
 
 
 /* MODALS */
@@ -188,3 +181,40 @@ body {
   .playlist-table {
 
   }
+
+  #morning {
+    background-image: url('https://images.unsplash.com/photo-1465488867967-ffb57e7f0a89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');}
+  #afternoon {
+    background-image: url('https://images.unsplash.com/photo-1476616853026-24c1f0309646?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80');}
+  #evening {
+    background-image: url('https://images.unsplash.com/photo-1531604250646-2f0e818c4f06?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=632&q=80');}
+  #night {
+    background-image: url('https://images.unsplash.com/photo-1498590880827-3f79fdcd7fbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80');}
+  #spring {
+    background-image: url('https://images.unsplash.com/photo-1516205651411-aef33a44f7c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80');}
+  #summer {
+    background-image: url('https://images.unsplash.com/photo-1532347922424-c652d9b7208e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80');}
+  #fall {
+    background-image: url('https://images.unsplash.com/photo-1467649165350-bdae46d9779b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80');}
+  #winter {
+    background-image: url('https://images.unsplash.com/photo-1482331336918-c80fab6c90f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80');}
+  #sunshine {
+    background-image: url('https://images.unsplash.com/12/sun-trees.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');}
+  #rain {
+    background-image: url('https://images.unsplash.com/photo-1501691223387-dd0500403074?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80');}
+  #clouds {
+    background-image: url('https://images.unsplash.com/photo-1500740516770-92bd004b996e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80');}
+  #woods {
+    background-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');}
+  #beach {
+    background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80');}
+  #fields {
+    background-image: url('https://images.unsplash.com/photo-1420641637488-df930ea6ec80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80');}
+
+
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: blue;
+  }
+}

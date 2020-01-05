@@ -69,7 +69,7 @@ class AllMusic extends Component {
     return (
       <div className='all-music'>
 
-        {(this.props.allMusic) ? <button className='add-song-button' onClick={this.showAdd}>Add Music</button> : null}
+        {(this.props.allMusic) ? <button className='add-song-button' className='button-primary' onClick={this.showAdd}>Add Music</button> : null}
 
         {(this.state.showEdit) ? <EditSong editedSong={this.state} updateSong={this.props.updateSong} closeEdit={this.closeEdit}/> : null}
 
@@ -83,6 +83,7 @@ class AllMusic extends Component {
               <th>Album</th>
               <th>Energy Level</th>
               <th>Song Weight</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
