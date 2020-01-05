@@ -8,40 +8,25 @@ class Main extends Component {
       this.state = {
         allMusic:true,
         allPlaylists: false,
-        showAdd: false,
       }
     }
 
-    // SHOW ADD SONG MODAL
-    showAdd = () => {
-      this.setState({
-        showAdd: true
-      })
-    }
-
-    // CLOSE ADD SONG MODAL
-    closeAdd = () => {
-      this.setState({
-        showAdd:false
-      })
-    }
-
-    // Show Music
+    // SHOW MUSIC
     showAllMusic = () => {
       this.setState({
         allMusic: true,
         allPlaylists: false
       })
-      this.props.clearCategories()
+      this.props.clearCategories() // App.js <- CLEAR PLAYLISTS
     }
 
-    // Show Playlists
+    // SHOW PLAYLISTS
     showAllPlaylists = () => {
       this.setState({
         allMusic: false,
         allPlaylists: true
       })
-      this.props.checkCategories()
+      this.props.checkCategories() // App.js <- FILL PLAYLISTS
     }
 
 
@@ -52,7 +37,6 @@ class Main extends Component {
             <button onClick={this.showAllMusic}>All Music</button>
             <button onClick={this.showAllPlaylists}>All Playlists</button>
           </div>
-          {(this.state.allMusic) ? <button className='add-song-button' onClick={this.showAdd}>Add Music</button> : null}
           {(this.state.allMusic)
             ?
             <AllMusic
@@ -60,10 +44,10 @@ class Main extends Component {
               addSong={this.props.addSong}
               updateSong={this.props.updateSong}
               deleteSongs={this.props.deleteSongs}
-              showAdd={this.state.showAdd}
               closeAdd={this.closeAdd}
               addAnother={this.addAnother}
               another={this.state.another}
+              allMusic={this.state.allMusic}
             />
             :
             <AllPlaylists

@@ -7,7 +7,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: tan;
-
 }
 
 /* APP */
@@ -43,9 +42,7 @@ body {
 
 /* MAIN */
 .main-div {
-  width: 80%;
-  margin: auto;
-  margin-bottom: 10%;
+
 }
 .main-buttons {
   display: flex;
@@ -60,7 +57,6 @@ body {
   margin: auto;
   text-align: center;
   background: grey;
-
 }
 
 .primary {
@@ -143,7 +139,6 @@ body {
 
 /* MODALS */
 .modal-container {
-  background-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
@@ -154,40 +149,27 @@ body {
   background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
 }
 
-.edit-song-modal {
+.modals {
   border: 1px solid #888;
   border-radius: 2px;
   background-color: white;
   margin: 25% auto;
   padding: 20px;
-  width: 60%;
+  width: 40%;
   height: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-  .edit-song-form {
 
-  }
-
-.new-song-modal {
-  border: 1px solid #888;
-  border-radius: 2px;
-  background-color: white;
-  margin: 25% auto;
-  padding: 20px;
-  width: 60%;
-  height: 20%;
+.forms {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
 }
-  .new-song-form {
-    display: flex;
-    justify-content: center;
-  }
+
+
 
 .playlist-modal {
   border: 1px solid #888;

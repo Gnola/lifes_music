@@ -8,6 +8,7 @@ class AllMusic extends Component {
         super(props)
         this.state = {
           showEdit:false,
+          showAdd:false,
           id: null,
           title:'',
           artist:'',
@@ -20,7 +21,7 @@ class AllMusic extends Component {
     }
 
 
-    // SHOW EDIT MODAL
+    // SHOW EDIT MODAL <- AllSongs.js
     showEdit = (song) => {
       this.setState({
         showEdit: true,
@@ -35,7 +36,7 @@ class AllMusic extends Component {
       })
     }
 
-    // CLOSE EDIT MODAL
+    // CLOSE EDIT MODAL <- EditSong.js
     closeEdit = () => {
       this.setState({
         showEdit:false,
@@ -49,13 +50,30 @@ class AllMusic extends Component {
       })
     }
 
+    // OPEN ADD SONG MODAL
+    showAdd = () => {
+      this.setState({
+        showAdd: true
+      })
+    }
+
+    // CLOSE ADD SONG MODAL <- NewSong.js
+    closeAdd = () => {
+      this.setState({
+        showAdd:false
+      })
+    }
 
 
   render() {
     return (
       <div className='all-music'>
+
+        {(this.props.allMusic) ? <button className='add-song-button' onClick={this.showAdd}>Add Music</button> : null}
+
         {(this.state.showEdit) ? <EditSong editedSong={this.state} updateSong={this.props.updateSong} closeEdit={this.closeEdit}/> : null}
-        {(this.props.showAdd) ? <NewSong addSong={this.props.addSong} closeAdd={this.props.closeAdd}/> : null}
+
+        {(this.state.showAdd) ? <NewSong addSong={this.props.addSong} closeAdd={this.closeAdd}/> : null}
 
         <table className='all-music-table'>
           <thead>

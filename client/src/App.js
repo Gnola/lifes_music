@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Header from './components/Header.js';
 import Main from './components/Main.js';
 
-
 let baseUrl = '';
 
 if (process.env.NODE_ENV === 'development') {
@@ -15,7 +14,8 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          songs: [],
+          songs: [], // -> Main.js --> AllMusic.js ---> AllSongs.js
+          // ALL PLAYLISTS -> Main.js --> AllPlaylists.js ---> Playlists
           morningSongs: [],
           afternoonSongs: [],
           eveningSongs: [],
@@ -47,7 +47,7 @@ class App extends Component {
         err => console.log(err))
     }
 
-    // CREATE
+    // CREATE <- Main.js <-- AllMusic.js <--- NewSong.js
     addSong = (newSong) => {
       console.log(newSong);
       fetch( `${baseUrl}/allsongs`,
@@ -69,7 +69,7 @@ class App extends Component {
         error => console.log(error))
     }
 
-    // UPDATE
+    // UPDATE <- Main.js <-- AllMusic.js <--- EditSong.js
     updateSong = (editedSong) => {
       console.log(editedSong);
       fetch( `${baseUrl}/allsongs/${editedSong.id}`,
@@ -86,7 +86,7 @@ class App extends Component {
         error => console.log(error) )
     }
 
-    // DELETE
+    // DELETE <- Main.js <-- AllMusic.js <--- AllSongs.js
     deleteSongs = (id) => {
       fetch( `${baseUrl}/allsongs/${id}`,
         {
@@ -110,7 +110,8 @@ class App extends Component {
       this.fetchSongs()
     }
 
-  // CLEAR PLAYLISTS
+
+  // CLEAR PLAYLISTS <- Main.js
   clearCategories = () => {
     this.setState({
       morningSongs: [],
@@ -131,7 +132,8 @@ class App extends Component {
     console.log(this.state);
   }
 
-  //
+
+  // FILL PLAYLISTS <- Main.js
   checkCategories = () => {
     for (var i = 0; i < this.state.songs.length; i++) {
       if (this.state.songs[i].energy <=4 && this.state.songs[i].what >=6) {
@@ -183,15 +185,11 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className='app-div'>
         <Header />
+
         <Main
           songs={this.state.songs}
-          addSong={this.addSong}
-          updateSong={this.updateSong}
-          deleteSongs={this.deleteSongs}
-          checkCategories={this.checkCategories}
-          clearCategories={this.clearCategories}
           morningSongs={this.state.morningSongs}
           afternoonSongs={this.state.afternoonSongs}
           eveningSongs={this.state.eveningSongs}
@@ -206,7 +204,14 @@ class App extends Component {
           woodSongs={this.state.woodSongs}
           beachSongs={this.state.beachSongs}
           fieldSongs={this.state.fieldSongs}
+
+          addSong={this.addSong}
+          updateSong={this.updateSong}
+          deleteSongs={this.deleteSongs}
+          checkCategories={this.checkCategories}
+          clearCategories={this.clearCategories}
         />
+
       </div>
     );
   }
