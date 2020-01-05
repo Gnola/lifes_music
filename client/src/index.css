@@ -6,11 +6,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
+}
+.app-div {
+  background: tan;
+  /* background: rgb(94,63,42); */
 }
 
 /* HEADER */
 .header {
+  border: 3px solid black;
   background-image: url('https://images.unsplash.com/photo-1483412033650-1015ddeb83d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80');
   background-size: cover;
   background-repeat: no-repeat;
@@ -40,50 +44,101 @@ body {
 /* MAIN */
 .main {
   border: 3px solid black;
+  background: white;
+  width: 95%;
+  margin: auto;
 }
 
   .main-buttons {
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     display: flex;
     justify-content: center;
-    margin: 15px;
+    margin-top: 2%;
+    margin-bottom: 1%;
+  }
+  .main-buttons > .button-primary {
+    margin: 0px 5px 0px 5px;
   }
 
 
     /* ALL-MUSIC */
     .all-music {
       border: 2px solid blue;
-      width: 75%;
+      width: 95%;
       margin: auto;
       background: whitesmoke;
     }
+      .add-song-form {
+        border: 1px solid yellow;
+        width: 95%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0px;
+        margin-top: 2%;
+        background: grey;
+      }
+
+      .form-fields {
+        width: 90%;
+        margin-top: 3%;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      .form-buttons {
+        display: flex;
+        justify-content: center;
+        height: auto;
+        width: 50%;
+        margin: auto;
+      }
 
       .all-music-table {
         border: 1px solid yellow;
-        width: 100%;
+        width: 95%;
         margin: auto;
         text-align: center;
+        margin-bottom: 5%;
       }
         th, td {
           text-align: center;
         }
         th {
           border-bottom: none;
+          padding: 0px;
         }
-        .primary {
-          width: 25%;
-          padding: 0;
-          color: black;
+        td {
+          padding: 1px;
           cursor: pointer;
+          border-bottom-color: rgba(0,0,0,0.3);
         }
-        .secondary {
-          width: 8%;
-          color: blue;
+        .title {
+          width: 10%;
+        }
+        .artist {
+          width: 10%;
+        }
+        .album {
+          width: 15%;
+        }
+        .energy {
+          width: 3%;
+        }
+        .weight {
+          width: 3%;
         }
         .delete-button {
-          border-bottom: none;
+          width: 2%;
+          font-weight: 600;
+          color: rgba(215, 0, 0, 0.9);
           padding: 0;
           cursor: pointer;
+        }
+        .delete-button:hover {
+          color: rgba(255, 0, 0, 0.5);
         }
 
     /* ALL PLAYLISTS */
@@ -97,7 +152,7 @@ body {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      width: 80%;
+      width: 95%;
       margin: auto;
     }
     .playlist-rows > h3 {
@@ -126,6 +181,11 @@ body {
       align-items: center;
       text-align: center;
       /* background-color: rgba(0, 0, 0, 0.4); */
+    }
+
+    #close-button {
+      background-color: rgba(0,0,0,0.8);
+      color: white;
     }
 
 
@@ -165,56 +225,188 @@ body {
 
 
 .playlist-modal {
-  border: 1px solid #888;
+  /* border: 1px solid #888; */
   border-radius: 2px;
   background-color: white;
-  margin: 25% auto;
+  margin: 12% auto;
+  position: relative;
   padding: 20px;
-  width: 60%;
-  height: 20%;
+  width: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-
+  .playlist-div {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.7);
+    margin-bottom: 5%;
+  }
   .playlist-table {
-
+    width: 95%;
   }
 
   #morning {
-    background-image: url('https://images.unsplash.com/photo-1465488867967-ffb57e7f0a89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');}
+    background-image: url('https://images.unsplash.com/photo-1465488867967-ffb57e7f0a89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+  }
   #afternoon {
-    background-image: url('https://images.unsplash.com/photo-1476616853026-24c1f0309646?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80');}
+    background-image: url('https://images.unsplash.com/photo-1476616853026-24c1f0309646?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80');
+    background-size: cover;
+  }
   #evening {
-    background-image: url('https://images.unsplash.com/photo-1531604250646-2f0e818c4f06?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=632&q=80');}
+    background-image: url('https://images.unsplash.com/photo-1531604250646-2f0e818c4f06?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=632&q=80');
+    background-size: cover;
+  }
   #night {
-    background-image: url('https://images.unsplash.com/photo-1498590880827-3f79fdcd7fbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80');}
+    background-image: url('https://images.unsplash.com/photo-1498590880827-3f79fdcd7fbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80');
+    background-size: cover;
+  }
+    #night > h2 {
+      color: rgba(255, 255, 255, 0.8);
+    }
   #spring {
-    background-image: url('https://images.unsplash.com/photo-1516205651411-aef33a44f7c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80');}
+    background-image: url('https://images.unsplash.com/photo-1516205651411-aef33a44f7c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80');
+    background-size: cover;
+  }
   #summer {
-    background-image: url('https://images.unsplash.com/photo-1532347922424-c652d9b7208e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80');}
+    background-image: url('https://images.unsplash.com/photo-1532347922424-c652d9b7208e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80');
+    background-size: cover;
+  }
   #fall {
-    background-image: url('https://images.unsplash.com/photo-1467649165350-bdae46d9779b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80');}
+    background-image: url('https://images.unsplash.com/photo-1467649165350-bdae46d9779b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80');
+    background-size: cover;
+  }
   #winter {
-    background-image: url('https://images.unsplash.com/photo-1482331336918-c80fab6c90f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80');}
+    background-image: url('https://images.unsplash.com/photo-1482331336918-c80fab6c90f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80');
+    background-size: cover;
+  }
   #sunshine {
-    background-image: url('https://images.unsplash.com/12/sun-trees.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');}
+    background-image: url('https://images.unsplash.com/12/sun-trees.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');
+    background-size: cover;
+  }
   #rain {
-    background-image: url('https://images.unsplash.com/photo-1501691223387-dd0500403074?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80');}
+    background-image: url('https://images.unsplash.com/photo-1501691223387-dd0500403074?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80');
+    background-size: cover;
+  }
   #clouds {
-    background-image: url('https://images.unsplash.com/photo-1500740516770-92bd004b996e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80');}
+    background-image: url('https://images.unsplash.com/photo-1500740516770-92bd004b996e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80');
+    background-size: cover;
+  }
+    #clouds > h2 {
+      color: rgba(255, 255, 255, 0.8);
+    }
   #woods {
-    background-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');}
+    background-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+  }
+    #woods > h2 {
+      color: rgba(255, 255, 255, 0.8);
+    }
   #beach {
-    background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80');}
+    background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80');
+    background-size: cover;
+  }
   #fields {
-    background-image: url('https://images.unsplash.com/photo-1420641637488-df930ea6ec80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80');}
+    background-image: url('https://images.unsplash.com/photo-1420641637488-df930ea6ec80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80');
+    background-size: cover;
+  }
 
 
 
 @media only screen and (max-width: 600px) {
-  body {
-    background-color: blue;
+
+  .main {
+    width: 100%;
+  }
+  .main-buttons {
+    width: 100%;
+  }
+  .all-music {
+    width: 100%;
+  }
+  .all-music-table {
+    border: 1px solid yellow;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+  }
+  .add-song-form {
+    width: 100%;
+    margin: 0;
+  }
+  .form-fields {
+    flex-direction: column;
+    /* align-items: baseline; */
+    align-content: center;
+    width: 70%;
+  }
+  label {
+    margin-bottom: 0px;
+    height: 50px;
+    width: 100%;
+  }
+  .title {
+    width: 5%;
+  }
+  .artist {
+    width: 5%;
+  }
+  .album {
+    width: 8%;
+  }
+  .energy, .weight {
+    display: none;
+  }
+  .playlist-rows {
+    flex-direction: column;
+    height: auto;
+    margin: 2% auto 2% auto;
+  }
+  .playlist-rows > h3 {
+    width: 100%;
+    text-align: center;
+    overflow: visible;
+    font-weight: 500;
+    margin: 2% auto 1% auto;
+  }
+  .playlists {
+    width: 85%;
+    height: 250px;
+    margin: 2% auto 2% auto;
+  }
+  .playlist-modal {
+    margin: 30% auto;
+    width: 80%;
+  }
+  .playlist-div {
+    width: 90%;
+    background: rgba(255, 255, 255, 0.6);
+  }
+  .playlist-table {
+    width: 100%;
+  }
+  td {
+    border-bottom-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .modals {
+    border: 1px solid #888;
+    border-radius: 2px;
+    background-color: white;
+    margin: 30% auto;
+    padding: 15px;
+    width: 60%;
+    height: auto;
+  }
+  button {
+    margin-bottom: 0px;
+  }
+
+  .forms {
+    margin-bottom: 0px;
   }
 }

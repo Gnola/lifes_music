@@ -69,11 +69,10 @@ class AllMusic extends Component {
     return (
       <div className='all-music'>
 
-        {(this.props.allMusic) ? <button className='add-song-button' className='button-primary' onClick={this.showAdd}>Add Music</button> : null}
 
         {(this.state.showEdit) ? <EditSong editedSong={this.state} updateSong={this.props.updateSong} closeEdit={this.closeEdit}/> : null}
 
-        {(this.state.showAdd) ? <NewSong addSong={this.props.addSong} closeAdd={this.closeAdd}/> : null}
+        <NewSong addSong={this.props.addSong} closeAdd={this.closeAdd}/>
 
         <table className='all-music-table'>
           <thead>
@@ -81,8 +80,8 @@ class AllMusic extends Component {
               <th>Song</th>
               <th>Artist</th>
               <th>Album</th>
-              <th>Energy Level</th>
-              <th>Song Weight</th>
+              <th className='energy'>Energy Level</th>
+              <th className='weight'>Song Weight</th>
               <th></th>
             </tr>
           </thead>
@@ -105,3 +104,4 @@ class AllMusic extends Component {
 }
 
 export default AllMusic;
+// {(this.props.allMusic) ? <button className='add-song-button' className='button-primary' onClick={this.showAdd}>Add Music</button> : null}

@@ -38,36 +38,35 @@ class Main extends Component {
             <button className={(this.state.allMusic) ? 'button-primary' : null} onClick={this.showAllMusic}>All Music</button>
             <button className={(this.state.allPlaylists) ? 'button-primary' : null} onClick={this.showAllPlaylists}>All Playlists</button>
           </div>
-              {(this.state.allMusic)
-                ?
-                <AllMusic
-                  songs={this.props.songs}
-                  addSong={this.props.addSong}
-                  updateSong={this.props.updateSong}
-                  deleteSongs={this.props.deleteSongs}
-                  closeAdd={this.closeAdd}
-                  addAnother={this.addAnother}
-                  another={this.state.another}
-                  allMusic={this.state.allMusic}
-                />
-                :
-                <AllPlaylists
-                  morningSongs={this.props.morningSongs}
-                  afternoonSongs={this.props.afternoonSongs}
-                  eveningSongs={this.props.eveningSongs}
-                  nighttimeSongs={this.props.nighttimeSongs}
-                  springSongs={this.props.springSongs}
-                  summerSongs={this.props.summerSongs}
-                  fallSongs={this.props.fallSongs}
-                  winterSongs={this.props.winterSongs}
-                  sunshineSongs={this.props.sunshineSongs}
-                  rainSongs={this.props.rainSongs}
-                  cloudSongs={this.props.cloudSongs}
-                  woodSongs={this.props.woodSongs}
-                  beachSongs={this.props.beachSongs}
-                  fieldSongs={this.props.fieldSongs}
-                />
-              }
+          {(this.state.allMusic) ?
+          <AllMusic
+            songs={this.props.songs}
+            addSong={this.props.addSong}
+            updateSong={this.props.updateSong}
+            deleteSongs={this.props.deleteSongs}
+            closeAdd={this.closeAdd}
+            addAnother={this.addAnother}
+            another={this.state.another}
+            allMusic={this.state.allMusic}
+          />
+          :
+          <AllPlaylists
+            morningSongs={this.props.morningSongs}
+            afternoonSongs={this.props.afternoonSongs}
+            eveningSongs={this.props.eveningSongs}
+            nighttimeSongs={this.props.nighttimeSongs}
+            springSongs={this.props.springSongs}
+            summerSongs={this.props.summerSongs}
+            fallSongs={this.props.fallSongs}
+            winterSongs={this.props.winterSongs}
+            sunshineSongs={this.props.sunshineSongs}
+            rainSongs={this.props.rainSongs}
+            cloudSongs={this.props.cloudSongs}
+            woodSongs={this.props.woodSongs}
+            beachSongs={this.props.beachSongs}
+            fieldSongs={this.props.fieldSongs}
+          />
+          }
 
         </div>
       );

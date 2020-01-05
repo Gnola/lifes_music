@@ -35,13 +35,15 @@ class EditSong extends Component {
       <div className='modal-container'>
         <div className='modals'>
           <form className='forms' onSubmit={this.handleSubmit}>
-            <label>Song Title<input type='text' id='title' value={this.state.title} onChange={this.handleChange} placeholder={this.state.title}/></label>
-            <label>Artist<input type='text' id='artist' value={this.state.artist} onChange={this.handleChange} placeholder={this.state.artist}/></label>
-            <label>Album<input type='text' id='album' value={this.state.album} onChange={this.handleChange} placeholder={this.state.album}/></label>
-            <label>Energy Level<input type='number' min="0" max='10' id='energy' value={this.state.energy} onChange={this.handleChange} placeholder={this.state.energy}/></label>
-            <label>Song Weight<input type='number' min="0" max='10' id='what' value={this.state.what} onChange={this.handleChange} placeholder={this.state.what}/></label>
-            <input type='submit' value="Edit Song"/>
-            <button onClick={this.props.closeEdit}>Cancel</button>
+            <label>Song <input type='text' id='title' value={this.state.title} onChange={this.handleChange} placeholder={this.state.title}/></label>
+            <label>Artist <input type='text' id='artist' value={this.state.artist} onChange={this.handleChange} placeholder={this.state.artist}/></label>
+            <label>Album <input type='text' id='album' value={this.state.album} onChange={this.handleChange} placeholder={this.state.album}/></label>
+            <label>Energy Level <input type='number' min="0" max='10' id='energy' value={this.state.energy} onChange={this.handleChange} placeholder={this.state.energy}/></label>
+            <label>Song Weight <input type='number' min="0" max='10' id='what' value={this.state.what} onChange={this.handleChange} placeholder={this.state.what}/></label>
+            <div className='form-buttons'>
+              <input className='button-primary' type='submit' value="Edit"/>
+              <button onClick={this.props.closeEdit}>Cancel</button>
+            </div>
           </form>
         </div>
       </div>
