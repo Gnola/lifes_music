@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const Songs = require('../models/songmodels.js')
+const Song = require('../models/songsmodel.js')
 
 // C
 router.post('/', (req, res) => {
-  Songs.create(
+  Song.create(
     req.body,
     (err, createdTest) => {
       res.send(createdTest)
@@ -14,7 +14,7 @@ router.post('/', (req, res) => {
 
 // R
 router.get('/', (req, res) => {
-  Songs.find(
+  Song.find(
     {},
     (err, allSongs) => {
       res.send(allSongs)
@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
 
 // U
 router.put('/:id', (req, res) => {
-  Songs.findByIdAndUpdate(
+  Song.findByIdAndUpdate(
     req.params.id,
     req.body,
     {new:true},
@@ -37,7 +37,7 @@ router.put('/:id', (req, res) => {
 
 // D
 router.delete('/:id', (req, res) => {
-  Songs.findByIdAndRemove(
+  Song.findByIdAndRemove(
     req.params.id,
     (err, deletedTest) => {
       res.send('You deleted this...')

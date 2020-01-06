@@ -26,8 +26,8 @@ class EditSong extends Component {
     // SUBMIT
     handleSubmit = (event) => {
       event.preventDefault()
-      console.log(this.state);
-      // this.props.updateSong(this.state) // App.js <--- Main.js <-- AllMusic.js <- UPDATE SONG (using STATE)
+      // console.log(this.state);
+      this.props.updateSong(this.state) // App.js <--- Main.js <-- AllMusic.js <- UPDATE SONG (using STATE)
       this.props.closeEdit() // AllMusic.js <- CLOSE MODAL
     }
 
@@ -42,6 +42,10 @@ class EditSong extends Component {
             <label>Album <input type='text' id='album' value={this.state.album} onChange={this.handleChange} placeholder={this.state.album}/></label>
             <label>Energy Level <input type='number' min="0" max='10' id='energy' value={this.state.energy} onChange={this.handleChange} placeholder={this.state.energy}/></label>
             <label>Song Weight <input type='number' min="0" max='10' id='what' value={this.state.what} onChange={this.handleChange} placeholder={this.state.what}/></label>
+              <label>Where your songs are: </label>
+              {this.state.where.map((playlist, index) => (
+                <p key={index}>{playlist}</p>
+              ))}
             <div className='form-buttons'>
               <input className='button-primary' type='submit' value="Edit"/>
               <button onClick={this.props.closeEdit}>Cancel</button>

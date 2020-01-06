@@ -42,7 +42,7 @@ class NewSong extends Component {
 
   render() {
     return (
-      <div className='add-song'>
+      <div className='add-song-div'>
         <form className='add-song-form' onSubmit={this.handleSubmit}>
           <div className='form-fields'>
             <label>Title <input type='text' id='title' value={this.state.title} onChange={this.handleChange} placeholder='Song Title'/></label>

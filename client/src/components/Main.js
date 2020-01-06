@@ -22,7 +22,7 @@ class Main extends Component {
         allMusic: true,
         allPlaylists: false
       })
-      console.log(this.state);
+      // console.log(this.state);
     }
 
     // SHOW PLAYLISTS
@@ -32,7 +32,7 @@ class Main extends Component {
         allMusic: false,
         allPlaylists: true
       })
-      console.log(this.state);
+      // console.log(this.state);
     }
 
 

@@ -31,14 +31,13 @@ class App extends Component {
           fieldSongs:[],
           sunshineSongs: [],
           rainSongs: [],
-          cloudSongs:[],
-          whereArray:[]
+          cloudSongs:[]
         }
     }
 
     // READ
     fetchSongs = () => {
-      fetch( `${baseUrl}/allsongs` )
+      fetch( `http://localhost:3000/songs` )
       .then(
         res => res.json())
       .then(
@@ -52,7 +51,7 @@ class App extends Component {
     // CREATE <- Main.js <-- AllMusic.js <--- NewSong.js
     addSong = (newSong) => {
       console.log(newSong);
-      fetch( `${baseUrl}/allsongs`,
+      fetch( `http://localhost:3000/songs`,
         {
           body: JSON.stringify(newSong),
           method: 'POST',
@@ -74,7 +73,7 @@ class App extends Component {
     // UPDATE <- Main.js <-- AllMusic.js <--- EditSong.js
     updateSong = (editedSong) => {
       console.log(editedSong);
-      fetch( `${baseUrl}/allsongs/${editedSong.id}`,
+      fetch( `http://localhost:3000/songs/${editedSong.id}`,
         {
           body: JSON.stringify(editedSong),
           method: 'PUT',
@@ -90,7 +89,7 @@ class App extends Component {
 
     // DELETE <- Main.js <-- AllMusic.js <--- AllSongs.js
     deleteSongs = (id) => {
-      fetch( `${baseUrl}/allsongs/${id}`,
+      fetch( `${baseUrl}/songs/${id}`,
         {
           method: 'DELETE',
           headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'}
@@ -145,9 +144,9 @@ class App extends Component {
   // FILL PLAYLISTS <- Main.js [ALL PLAYLISTS]
   checkCategories = () => {
     for (var i = 0; i < this.state.songs.length; i++) {
-      // this.state.songs[i].where = []
+      this.state.songs[i].where = []
       if (this.state.songs[i].energy <=4 && this.state.songs[i].what >=6) {
-        // this.state.songs[i].where.push('morningSongs')
+        this.state.songs[i].where.push('morningSongs')
         // console.log(this.state.songs[i]);
         this.state.morningSongs.push(this.state.songs[i])
         // this.updateSong(this.state.songs[i])
@@ -173,6 +172,8 @@ class App extends Component {
         this.state.cloudSongs.push(this.state.songs[i])
       }
       if (this.state.songs[i].energy <=6 && this.state.songs[i].what >=6) {
+        this.state.songs[i].where.push('springSongs')
+
         this.state.springSongs.push(this.state.songs[i])
       }
       if (this.state.songs[i].energy >=6 && this.state.songs[i].what >=6) {
@@ -201,14 +202,14 @@ class App extends Component {
   render() {
     return (
       <div className='app-div'>
+
         <Header />
+
         <div className='info'>
           <h1>How it works</h1>
           <h4>Describes how everything works</h4>
         </div>
-
         <NewSong addSong={this.addSong} />
-
 
         <Main
           songs={this.state.songs}

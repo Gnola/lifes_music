@@ -8,8 +8,8 @@ require('dotenv').config();
 // Middleware
 app.use(bodyParser.json());
 
-// const songController = require('./api/controllers/songcontroller.js')
-// app.use('/songs', songController)
+const songController = require('./api/controllers/songcontroller.js')
+app.use('/songs', songController)
 
 const allsongsController = require('./api/controllers/allsongscontroller.js')
 app.use('/allsongs', allsongsController)
@@ -34,6 +34,6 @@ if (process.env.NODE_ENV === 'production') {
   })
 }
 
-app.listen(PORT, () => {
+app.listen(5000, () => {
   console.log(`Listening on port ${PORT}`);
 })

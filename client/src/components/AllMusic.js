@@ -75,20 +75,15 @@ class AllMusic extends Component {
   render() {
     return (
       <div className='all-music'>
-
-
         {(this.state.showEdit) ? <EditSong editedSong={this.state} updateSong={this.props.updateSong} closeEdit={this.closeEdit}/> : null}
-
-
         <table className='all-music-table'>
           <thead>
             <tr>
-              <th>Song</th>
-              <th>Artist</th>
-              <th>Album</th>
-              <th className='energy'>Energy</th>
-              <th className='weight'>Weight</th>
-              <th className='delete'></th>
+              <th className='title-header'>Title</th>
+              <th className='artist-header'>Artist</th>
+              <th className='album-header'>Album</th>
+              <th className='location-header'>Song Location</th>
+              <th className='delete-header'></th>
             </tr>
           </thead>
           <tbody>
