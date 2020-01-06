@@ -1,3 +1,4 @@
+// <-- APP.JS
 import React, { Component } from 'react';
 import AllMusic from './AllMusic.js';
 import AllPlaylists from './AllPlaylists.js'
@@ -13,20 +14,22 @@ class Main extends Component {
 
     // SHOW MUSIC
     showAllMusic = () => {
+      this.props.clearCategories() // App.js <- CLEAR PLAYLISTS
       this.setState({
         allMusic: true,
         allPlaylists: false
       })
-      this.props.clearCategories() // App.js <- CLEAR PLAYLISTS
+      console.log(this.state);
     }
 
     // SHOW PLAYLISTS
     showAllPlaylists = () => {
+      this.props.checkCategories() // App.js <- FILL PLAYLISTS
       this.setState({
         allMusic: false,
         allPlaylists: true
       })
-      this.props.checkCategories() // App.js <- FILL PLAYLISTS
+      console.log(this.state);
     }
 
 
@@ -48,6 +51,7 @@ class Main extends Component {
             addAnother={this.addAnother}
             another={this.state.another}
             allMusic={this.state.allMusic}
+            checkCategories={this.props.checkCategories}
           />
           :
           <AllPlaylists

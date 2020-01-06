@@ -1,3 +1,4 @@
+// <-- MAIN.JS
 import React, { Component } from 'react';
 import AllSongs from './AllSongs.js';
 import NewSong from './NewSong.js'
@@ -16,6 +17,7 @@ class AllMusic extends Component {
           // genre:'',
           energy:'',
           what:'',
+          where:''
           // mood:''
         }
     }
@@ -23,6 +25,8 @@ class AllMusic extends Component {
 
     // SHOW EDIT MODAL <- AllSongs.js
     showEdit = (song) => {
+      // this.props.checkCategories()
+      console.log(song);
       this.setState({
         showEdit: true,
         id:song._id,
@@ -32,12 +36,14 @@ class AllMusic extends Component {
         // genre:song.genre,
         energy:song.energy,
         what:song.what,
+        where:song.where
         // mood:song.mood,
       })
     }
 
     // CLOSE EDIT MODAL <- EditSong.js
     closeEdit = () => {
+      // this.props.checkCategories()
       this.setState({
         showEdit:false,
         title:'',
@@ -46,6 +52,7 @@ class AllMusic extends Component {
         // genre: '',
         energy:'',
         what:'',
+        where:'',
         // mood:'',
       })
     }

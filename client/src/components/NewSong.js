@@ -10,6 +10,7 @@ class NewSong extends Component {
         // genre:'',
         energy:0,
         what:0,
+        where:[],
         // mood:0,
       }
     }
@@ -23,8 +24,9 @@ class NewSong extends Component {
 
     // SUBMIT
     handleSubmit = (event) => {
+      console.log(this.state);
       event.preventDefault()
-      this.props.addSong(this.state) // App.js <--- Main.js <-- AllMusic.js <- ADD SONG (using STATE)
+      // this.props.addSong(this.state) // App.js <--- Main.js <-- AllMusic.js <- ADD SONG (using STATE)
       this.props.closeAdd() // AllMusic.js <- CLOSE ADD SONG MODAL
       this.setState({
         title:'',
@@ -33,13 +35,14 @@ class NewSong extends Component {
         // genre: '',
         energy:0,
         what:0,
+        where:[],
         // mood:0,
       })
     }
 
   render() {
     return (
-      <div>
+      <div className='add-song'>
         <form className='add-song-form' onSubmit={this.handleSubmit}>
           <div className='form-fields'>
             <label>Title <input type='text' id='title' value={this.state.title} onChange={this.handleChange} placeholder='Song Title'/></label>

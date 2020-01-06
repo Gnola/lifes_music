@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Header from './components/Header.js';
 import Main from './components/Main.js';
+import Info from './components/Info.js';
+
 
 let baseUrl = '';
 
@@ -110,6 +112,13 @@ class App extends Component {
       this.fetchSongs()
     }
 
+    // test = () => {
+    //   for (var i = 0; i < this.state.songs.length; i++) {
+    //     this.state.songs[i].where =[]
+    //   }
+    //   console.log(this.state);
+    // }
+
 
   // CLEAR PLAYLISTS <- Main.js
   clearCategories = () => {
@@ -133,16 +142,22 @@ class App extends Component {
   }
 
 
-  // FILL PLAYLISTS <- Main.js
+  // FILL PLAYLISTS <- Main.js [ALL PLAYLISTS]
   checkCategories = () => {
     for (var i = 0; i < this.state.songs.length; i++) {
+      // this.state.songs[i].where = []
       if (this.state.songs[i].energy <=4 && this.state.songs[i].what >=6) {
+        // this.state.songs[i].where.push('morningSongs')
+        // console.log(this.state.songs[i]);
         this.state.morningSongs.push(this.state.songs[i])
+        // this.updateSong(this.state.songs[i])
       }
       if (this.state.songs[i].energy >=6 && this.state.songs[i].what >=7) {
         this.state.afternoonSongs.push(this.state.songs[i])
       }
       if (this.state.songs[i].energy >=4 && this.state.songs[i].energy <=6 && this.state.songs[i].what >=4 && this.state.songs[i].what <=7) {
+        // this.state.songs[i].where.push('eveningSongs')
+        // console.log(this.state.songs[i]);
         this.state.eveningSongs.push(this.state.songs[i])
       }
       if (this.state.songs[i].energy <=3 && this.state.songs[i].what <=4) {
@@ -187,7 +202,8 @@ class App extends Component {
     return (
       <div className='app-div'>
         <Header />
-
+        <Info />
+        <div className='space' />
         <Main
           songs={this.state.songs}
           morningSongs={this.state.morningSongs}

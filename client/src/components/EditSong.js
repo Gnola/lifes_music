@@ -11,6 +11,7 @@ class EditSong extends Component {
           // genre:this.props.editedSong.genre,
           energy:this.props.editedSong.energy,
           what:this.props.editedSong.what,
+          where:this.props.editedSong.where,
           // mood:this.props.editedSong.mood
         }
     }
@@ -25,7 +26,8 @@ class EditSong extends Component {
     // SUBMIT
     handleSubmit = (event) => {
       event.preventDefault()
-      this.props.updateSong(this.state) // App.js <--- Main.js <-- AllMusic.js <- UPDATE SONG (using STATE)
+      console.log(this.state);
+      // this.props.updateSong(this.state) // App.js <--- Main.js <-- AllMusic.js <- UPDATE SONG (using STATE)
       this.props.closeEdit() // AllMusic.js <- CLOSE MODAL
     }
 
@@ -52,6 +54,9 @@ class EditSong extends Component {
 }
 
 export default EditSong;
-
+// <label>Where your songs are: </label>
+// {(this.props.showEdit) ? <p>Sorry, but we couldn't match this song to any playlist</p> : this.state.where.map((playlist, index) => (
+//   <p key={index}>{playlist}</p>
+// ))}
 // <label>Genre<input type='text' id='genre' value={this.state.genre} onChange={this.handleChange} placeholder={this.state.genre}/></label>
 // <label>Mood<input type='number' min="0" max='10' id='mood' value={this.state.mood} onChange={this.handleChange} placeholder={this.state.mood}/></label>
