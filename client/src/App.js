@@ -206,11 +206,10 @@ class App extends Component {
           <h1>How it works</h1>
           <h4>Describes how everything works</h4>
         </div>
-        <div className='space' />
-        <div className='info2'>
-          <h4>and introduce the new song form</h4>
-        </div>
+
         <NewSong addSong={this.addSong} />
+
+
         <Main
           songs={this.state.songs}
           morningSongs={this.state.morningSongs}
