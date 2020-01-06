@@ -1,7 +1,7 @@
 // <-- MAIN.JS
 import React, { Component } from 'react';
 import AllSongs from './AllSongs.js';
-import NewSong from './NewSong.js'
+// import NewSong from './NewSong.js'
 import EditSong from './EditSong.js'
 
 class AllMusic extends Component {
@@ -57,19 +57,19 @@ class AllMusic extends Component {
       })
     }
 
-    // OPEN ADD SONG MODAL
-    showAdd = () => {
-      this.setState({
-        showAdd: true
-      })
-    }
-
-    // CLOSE ADD SONG MODAL <- NewSong.js
-    closeAdd = () => {
-      this.setState({
-        showAdd:false
-      })
-    }
+    // // OPEN ADD SONG MODAL
+    // showAdd = () => {
+    //   this.setState({
+    //     showAdd: true
+    //   })
+    // }
+    //
+    // // CLOSE ADD SONG MODAL <- NewSong.js
+    // closeAdd = () => {
+    //   this.setState({
+    //     showAdd:false
+    //   })
+    // }
 
 
   render() {
@@ -79,7 +79,6 @@ class AllMusic extends Component {
 
         {(this.state.showEdit) ? <EditSong editedSong={this.state} updateSong={this.props.updateSong} closeEdit={this.closeEdit}/> : null}
 
-        <NewSong addSong={this.props.addSong} closeAdd={this.closeAdd}/>
 
         <table className='all-music-table'>
           <thead>
@@ -87,9 +86,9 @@ class AllMusic extends Component {
               <th>Song</th>
               <th>Artist</th>
               <th>Album</th>
-              <th className='energy'>Energy Level</th>
-              <th className='weight'>Song Weight</th>
-              <th></th>
+              <th className='energy'>Energy</th>
+              <th className='weight'>Weight</th>
+              <th className='delete'></th>
             </tr>
           </thead>
           <tbody>
@@ -112,3 +111,4 @@ class AllMusic extends Component {
 
 export default AllMusic;
 // {(this.props.allMusic) ? <button className='add-song-button' className='button-primary' onClick={this.showAdd}>Add Music</button> : null}
+// <NewSong addSong={this.props.addSong} closeAdd={this.closeAdd}/>

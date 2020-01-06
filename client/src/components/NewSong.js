@@ -27,7 +27,7 @@ class NewSong extends Component {
       console.log(this.state);
       event.preventDefault()
       // this.props.addSong(this.state) // App.js <--- Main.js <-- AllMusic.js <- ADD SONG (using STATE)
-      this.props.closeAdd() // AllMusic.js <- CLOSE ADD SONG MODAL
+      // this.props.closeAdd() // AllMusic.js <- CLOSE ADD SONG MODAL
       this.setState({
         title:'',
         artist:'',
@@ -53,9 +53,7 @@ class NewSong extends Component {
           </div>
           <div className='form-buttons'>
             <input className='button-primary' type='submit' value="Add to Music"/>
-            <button onClick={this.props.closeAdd}>Cancel</button>
           </div>
-
         </form>
       </div>
     );

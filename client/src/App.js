@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/Header.js';
 import Main from './components/Main.js';
-import Info from './components/Info.js';
+import NewSong from './components/NewSong.js';
 
 
 let baseUrl = '';
@@ -202,8 +202,15 @@ class App extends Component {
     return (
       <div className='app-div'>
         <Header />
-        <Info />
+        <div className='info'>
+          <h1>How it works</h1>
+          <h4>Describes how everything works</h4>
+        </div>
         <div className='space' />
+        <div className='info2'>
+          <h4>and introduce the new song form</h4>
+        </div>
+        <NewSong addSong={this.addSong} />
         <Main
           songs={this.state.songs}
           morningSongs={this.state.morningSongs}

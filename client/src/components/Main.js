@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import AllMusic from './AllMusic.js';
 import AllPlaylists from './AllPlaylists.js'
+// import NewSong from './NewSong.js'
+
 
 class Main extends Component {
     constructor(props) {
@@ -9,6 +11,7 @@ class Main extends Component {
       this.state = {
         allMusic:true,
         allPlaylists: false,
+        showAdd:false,
       }
     }
 
@@ -36,7 +39,6 @@ class Main extends Component {
     render() {
       return (
         <div className='main'>
-
           <div className='main-buttons'>
             <button className={(this.state.allMusic) ? 'button-primary' : null} onClick={this.showAllMusic}>All Music</button>
             <button className={(this.state.allPlaylists) ? 'button-primary' : null} onClick={this.showAllPlaylists}>All Playlists</button>
