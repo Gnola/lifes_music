@@ -50,21 +50,18 @@ class App extends Component {
 
     // CREATE <- Main.js <-- AllMusic.js <--- NewSong.js
     addSong = (newSong) => {
-      console.log(newSong);
       fetch( `http://localhost:3000/songs`,
-        {
-          body: JSON.stringify(newSong),
-          method: 'POST',
-          headers: { 'Accept': 'application/json, text/plain, */*', 'Content-Type': 'application/json'}
-        })
+        { body: JSON.stringify(newSong), method: 'POST',headers: { 'Accept': 'application/json, text/plain, */*', 'Content-Type': 'application/json'}})
       .then(
-        newSong => {
-          return newSong.json()
-        })
+        newSong => { return newSong.json() })
       .then(
-        jsonedSong => this.setState({
-          songs:[jsonedSong,...this.state.songs]
-        })
+        (jsonedSong) => {
+          this.setState({
+            songs:[jsonedSong,...this.state.songs]
+          })
+          this.checkNew(jsonedSong)
+          // console.log(this.state);
+        }
       )
       .catch(
         error => console.log(error))
@@ -72,16 +69,20 @@ class App extends Component {
 
     // UPDATE <- Main.js <-- AllMusic.js <--- EditSong.js
     updateSong = (editedSong) => {
-      console.log(editedSong);
-      fetch( `http://localhost:3000/songs/${editedSong.id}`,
-        {
-          body: JSON.stringify(editedSong),
-          method: 'PUT',
-          headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'}
-        })
+      editedSong.where=[]
+      this.checkNew(editedSong)
+      console.log(this.state);
+    }
+
+    // UPDATE WHERE ARRAY
+    updateSongWithLocations = (editedSong) => {
+      fetch( `http://localhost:3000/songs/${editedSong._id}`,
+        { body: JSON.stringify(editedSong), method: 'PUT', headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'}})
       .then(
-        updatedSong => {
+        (updatedSong) => {
           this.fetchSongs()
+          console.log(editedSong);
+          console.log(this.state);
         })
       .catch(
         error => console.log(error) )
@@ -89,7 +90,7 @@ class App extends Component {
 
     // DELETE <- Main.js <-- AllMusic.js <--- AllSongs.js
     deleteSongs = (id) => {
-      fetch( `${baseUrl}/songs/${id}`,
+      fetch( `http://localhost:3000/songs/${id}`,
         {
           method: 'DELETE',
           headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'}
@@ -111,13 +112,136 @@ class App extends Component {
       this.fetchSongs()
     }
 
-    // test = () => {
-    //   for (var i = 0; i < this.state.songs.length; i++) {
-    //     this.state.songs[i].where =[]
-    //   }
-    //   console.log(this.state);
-    // }
 
+  // CHECK NEW
+  checkNew = (song) => {
+    if (song.energy <=4 && song.weight >=6) {
+      song.where.push('Morning')
+      this.state.morningSongs.push(song)
+    }
+    if (song.energy >=6 && song.weight >=7) {
+      song.where.push('Afternoon')
+      this.state.afternoonSongs.push(song)
+    }
+    if (song.energy >=4 && song.energy <=6 && song.weight >=4 && song.weight <=7) {
+      song.where.push('Evening')
+      this.state.eveningSongs.push(song)
+    }
+    if (song.energy <=3 && song.weight <=4) {
+      song.where.push('Nighttime')
+      this.state.nighttimeSongs.push(song)
+    }
+    if (song.energy >=5 && song.weight >=6) {
+      song.where.push('Sunshine')
+      this.state.sunshineSongs.push(song)
+    }
+    if (song.energy <=3 && song.weight <=4) {
+      song.where.push('Rain')
+      this.state.rainSongs.push(song)
+    }
+    if (song.energy <=5 && song.weight <=5) {
+      song.where.push('Clouds')
+      this.state.cloudSongs.push(song)
+    }
+    if (song.energy <=6 && song.weight >=6) {
+      song.where.push('Spring')
+      this.state.springSongs.push(song)
+    }
+    if (song.energy >=6 && song.weight >=6) {
+      song.where.push('Summer')
+      this.state.summerSongs.push(song)
+    }
+    if (song.energy <=5 && song.weight <=5) {
+      song.where.push('Fall')
+      this.state.fallSongs.push(song)
+    }
+    if (song.energy <=4 && song.weight <=4) {
+      song.where.push('Winter')
+      this.state.winterSongs.push(song)
+    }
+    if (song.energy <=5 && song.weight <=5) {
+      song.where.push('Woods')
+      this.state.woodSongs.push(song)
+    }
+    if (song.energy >=5 && song.energy <=7 && song.weight >=5 && song.weight <=8) {
+      song.where.push('Beach')
+      this.state.beachSongs.push(song)
+    }
+    if (song.energy >=5 && song.weight >=5) {
+      song.where.push('Fields')
+      this.state.fieldSongs.push(song)
+    }
+    // console.log(song);
+    // console.log(this.state);
+    this.updateSongWithLocations(song)
+  }
+
+
+
+  // FILL PLAYLISTS <- Main.js [ALL PLAYLISTS]
+  checkCategories = () => {
+    // this.clearCategories()
+    for (var i = 0; i < this.state.songs.length; i++) {
+      this.state.songs[i].where = []
+      if (this.state.songs[i].energy <=4 && this.state.songs[i].weight >=6) {
+        // this.state.songs[i].where.push('Morning')
+        this.state.morningSongs.push(this.state.songs[i])
+      }
+      if (this.state.songs[i].energy >=6 && this.state.songs[i].weight >=7) {
+        // this.state.songs[i].where.push('Afternoon')
+        this.state.afternoonSongs.push(this.state.songs[i])
+      }
+      if (this.state.songs[i].energy >=4 && this.state.songs[i].energy <=6 && this.state.songs[i].weight >=4 && this.state.songs[i].weight <=7) {
+        // this.state.songs[i].where.push('Evening')
+        this.state.eveningSongs.push(this.state.songs[i])
+      }
+      if (this.state.songs[i].energy <=3 && this.state.songs[i].weight <=4) {
+        // this.state.songs[i].where.push('Nighttime')
+        this.state.nighttimeSongs.push(this.state.songs[i])
+      }
+      if (this.state.songs[i].energy >=5 && this.state.songs[i].weight >=6) {
+        // this.state.songs[i].where.push('Sunshine')
+        this.state.sunshineSongs.push(this.state.songs[i])
+      }
+      if (this.state.songs[i].energy <=3 && this.state.songs[i].weight <=4) {
+        // this.state.songs[i].where.push('Rain')
+        this.state.rainSongs.push(this.state.songs[i])
+      }
+      if (this.state.songs[i].energy <=5 && this.state.songs[i].weight <=5) {
+        // this.state.songs[i].where.push('Clouds')
+        this.state.cloudSongs.push(this.state.songs[i])
+      }
+      if (this.state.songs[i].energy <=6 && this.state.songs[i].weight >=6) {
+        // this.state.songs[i].where.push('Spring')
+        this.state.springSongs.push(this.state.songs[i])
+      }
+      if (this.state.songs[i].energy >=6 && this.state.songs[i].weight >=6) {
+        // this.state.songs[i].where.push('Summer')
+        this.state.summerSongs.push(this.state.songs[i])
+      }
+      if (this.state.songs[i].energy <=5 && this.state.songs[i].weight <=5) {
+        // this.state.songs[i].where.push('Fall')
+        this.state.fallSongs.push(this.state.songs[i])
+      }
+      if (this.state.songs[i].energy <=4 && this.state.songs[i].weight <=4) {
+        // this.state.songs[i].where.push('Winter')
+        this.state.winterSongs.push(this.state.songs[i])
+      }
+      if (this.state.songs[i].energy <=5 && this.state.songs[i].weight <=5) {
+        // this.state.songs[i].where.push('Woods')
+        this.state.woodSongs.push(this.state.songs[i])
+      }
+      if (this.state.songs[i].energy >=5 && this.state.songs[i].energy <=7 && this.state.songs[i].weight >=5 && this.state.songs[i].weight <=8) {
+        // this.state.songs[i].where.push('Beach')
+        this.state.beachSongs.push(this.state.songs[i])
+      }
+      if (this.state.songs[i].energy >=5 && this.state.songs[i].weight >=5) {
+        // this.state.songs[i].where.push('Field')
+        this.state.fieldSongs.push(this.state.songs[i])
+      }
+    }
+    console.log(this.state);
+  }
 
   // CLEAR PLAYLISTS <- Main.js
   clearCategories = () => {
@@ -141,64 +265,6 @@ class App extends Component {
   }
 
 
-  // FILL PLAYLISTS <- Main.js [ALL PLAYLISTS]
-  checkCategories = () => {
-    for (var i = 0; i < this.state.songs.length; i++) {
-      this.state.songs[i].where = []
-      if (this.state.songs[i].energy <=4 && this.state.songs[i].what >=6) {
-        this.state.songs[i].where.push('morningSongs')
-        // console.log(this.state.songs[i]);
-        this.state.morningSongs.push(this.state.songs[i])
-        // this.updateSong(this.state.songs[i])
-      }
-      if (this.state.songs[i].energy >=6 && this.state.songs[i].what >=7) {
-        this.state.afternoonSongs.push(this.state.songs[i])
-      }
-      if (this.state.songs[i].energy >=4 && this.state.songs[i].energy <=6 && this.state.songs[i].what >=4 && this.state.songs[i].what <=7) {
-        // this.state.songs[i].where.push('eveningSongs')
-        // console.log(this.state.songs[i]);
-        this.state.eveningSongs.push(this.state.songs[i])
-      }
-      if (this.state.songs[i].energy <=3 && this.state.songs[i].what <=4) {
-        this.state.nighttimeSongs.push(this.state.songs[i])
-      }
-      if (this.state.songs[i].energy >=5 && this.state.songs[i].what >=6) {
-        this.state.sunshineSongs.push(this.state.songs[i])
-      }
-      if (this.state.songs[i].energy <=3 && this.state.songs[i].what <=4) {
-        this.state.rainSongs.push(this.state.songs[i])
-      }
-      if (this.state.songs[i].energy <=5 && this.state.songs[i].what <=5) {
-        this.state.cloudSongs.push(this.state.songs[i])
-      }
-      if (this.state.songs[i].energy <=6 && this.state.songs[i].what >=6) {
-        this.state.songs[i].where.push('springSongs')
-
-        this.state.springSongs.push(this.state.songs[i])
-      }
-      if (this.state.songs[i].energy >=6 && this.state.songs[i].what >=6) {
-        this.state.summerSongs.push(this.state.songs[i])
-      }
-      if (this.state.songs[i].energy <=5 && this.state.songs[i].what <=5) {
-        this.state.fallSongs.push(this.state.songs[i])
-      }
-      if (this.state.songs[i].energy <=4 && this.state.songs[i].what <=4) {
-        this.state.winterSongs.push(this.state.songs[i])
-      }
-      if (this.state.songs[i].energy <=5 && this.state.songs[i].what <=5) {
-        this.state.woodSongs.push(this.state.songs[i])
-      }
-      if (this.state.songs[i].energy >=5 && this.state.songs[i].energy <=7 && this.state.songs[i].what >=5 && this.state.songs[i].what <=8) {
-        this.state.beachSongs.push(this.state.songs[i])
-      }
-      if (this.state.songs[i].energy >=5 && this.state.songs[i].what >=5) {
-        this.state.fieldSongs.push(this.state.songs[i])
-      }
-    }
-    console.log(this.state);
-  }
-
-
   render() {
     return (
       <div className='app-div'>
@@ -212,6 +278,7 @@ class App extends Component {
         <NewSong addSong={this.addSong} />
 
         <Main
+          location={this.location}
           songs={this.state.songs}
           morningSongs={this.state.morningSongs}
           afternoonSongs={this.state.afternoonSongs}
@@ -241,6 +308,92 @@ class App extends Component {
 }
 
 export default App;
+
+// CHECK EDIT
+// checkEdit = (song) => {
+//   // console.log(song);
+//   if (song.energy <=4 && song.weight >=6) {
+//     song.where.push('Morning')
+//     // this.state.morningSongs.push(song)
+//   }
+//   if (song.energy >=6 && song.weight >=7) {
+//     song.where.push('Afternoon')
+//     // this.state.afternoonSongs.push(song)
+//   }
+//   if (song.energy >=4 && song.energy <=6 && song.weight >=4 && song.weight <=7) {
+//     song.where.push('Evening')
+//     // this.state.eveningSongs.push(song)
+//   }
+//   if (song.energy <=3 && song.weight <=4) {
+//     song.where.push('Nighttime')
+//     // this.state.nighttimeSongs.push(song)
+//   }
+//   if (song.energy >=5 && song.weight >=6) {
+//     song.where.push('Sunshine')
+//     // this.state.sunshineSongs.push(song)
+//   }
+//   if (song.energy <=3 && song.weight <=4) {
+//     song.where.push('Rain')
+//     // this.state.rainSongs.push(song)
+//   }
+//   if (song.energy <=5 && song.weight <=5) {
+//     song.where.push('Clouds')
+//     // this.state.cloudSongs.push(song)
+//   }
+//   if (song.energy <=6 && song.weight >=6) {
+//     song.where.push('Spring')
+//     // this.state.springSongs.push(song)
+//   }
+//   if (song.energy >=6 && song.weight >=6) {
+//     song.where.push('Summer')
+//     // this.state.summerSongs.push(song)
+//   }
+//   if (song.energy <=5 && song.weight <=5) {
+//     song.where.push('Fall')
+//     // this.state.fallSongs.push(song)
+//   }
+//   if (song.energy <=4 && song.weight <=4) {
+//     song.where.push('Winter')
+//     // this.state.winterSongs.push(song)
+//   }
+//   if (song.energy <=5 && song.weight <=5) {
+//     song.where.push('Woods')
+//     // this.state.woodSongs.push(song)
+//   }
+//   if (song.energy >=5 && song.energy <=7 && song.weight >=5 && song.weight <=8) {
+//     song.where.push('Beach')
+//     // this.state.beachSongs.push(song)
+//   }
+//   if (song.energy >=5 && song.weight >=5) {
+//     song.where.push('Fields')
+//     // this.state.fieldSongs.push(song)
+//   }
+//   // console.log(song);
+//   // console.log(this.state);
+//   this.updateSongAgain(song)
+// }
+
+// updateSongAgain = (song) => {
+//   fetch( `http://localhost:3000/songs/${song.id}`,
+//     {
+//       body: JSON.stringify(song),
+//       method: 'PUT',
+//       headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'}
+//     })
+//   .then(
+//     (updatedSong) => {
+//       console.log('newly edited song');
+//       console.log(song);
+//       // for (var i = 0; i < this.state.songs.length; i++) {
+//       //   if (song.id === this.state.songs[i]._id) {
+//       //     this.state.songs[i] = song
+//       //   }
+//       // }
+//       this.fetchSongs()
+//     })
+//   .catch(
+//     error => console.log(error) )
+// }
 
 // OG checkCategories()
 // checkCategories = () => {

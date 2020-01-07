@@ -17,22 +17,20 @@ class Main extends Component {
 
     // SHOW MUSIC
     showAllMusic = () => {
-      this.props.clearCategories() // App.js <- CLEAR PLAYLISTS
+      // this.props.clearCategories() // App.js <- CLEAR PLAYLISTS
       this.setState({
         allMusic: true,
         allPlaylists: false
       })
-      // console.log(this.state);
     }
 
     // SHOW PLAYLISTS
     showAllPlaylists = () => {
-      this.props.checkCategories() // App.js <- FILL PLAYLISTS
+      // this.props.checkCategories() // App.js <- FILL PLAYLISTS
       this.setState({
         allMusic: false,
         allPlaylists: true
       })
-      // console.log(this.state);
     }
 
 
@@ -45,6 +43,7 @@ class Main extends Component {
           </div>
           {(this.state.allMusic) ?
           <AllMusic
+            location={this.props.location}
             songs={this.props.songs}
             addSong={this.props.addSong}
             updateSong={this.props.updateSong}

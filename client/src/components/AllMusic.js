@@ -10,34 +10,32 @@ class AllMusic extends Component {
         this.state = {
           showEdit:false,
           showAdd:false,
-          id: null,
+          _id: null,
           title:'',
           artist:'',
           album:'',
-          // genre:'',
+          where:[],
           energy:'',
-          what:'',
-          where:''
-          // mood:''
+          weight:'',
+          what:''
         }
     }
 
 
     // SHOW EDIT MODAL <- AllSongs.js
     showEdit = (song) => {
-      // this.props.checkCategories()
-      console.log(song);
+      console.log(song); // info comes from AllSongs which comes from DB
+      // this.props.location(song)
       this.setState({
         showEdit: true,
-        id:song._id,
+        _id:song._id,
         title:song.title,
         artist:song.artist,
         album:song.album,
-        // genre:song.genre,
+        where:song.where,
         energy:song.energy,
-        what:song.what,
-        where:song.where
-        // mood:song.mood,
+        weight:song.weight,
+        what:song.what
       })
     }
 
@@ -48,34 +46,19 @@ class AllMusic extends Component {
         showEdit:false,
         title:'',
         artist:'',
-        album: '',
-        // genre: '',
+        album:'',
+        where:[],
         energy:'',
-        what:'',
-        where:'',
-        // mood:'',
+        weight:'',
+        what:''
       })
     }
-
-    // // OPEN ADD SONG MODAL
-    // showAdd = () => {
-    //   this.setState({
-    //     showAdd: true
-    //   })
-    // }
-    //
-    // // CLOSE ADD SONG MODAL <- NewSong.js
-    // closeAdd = () => {
-    //   this.setState({
-    //     showAdd:false
-    //   })
-    // }
 
 
   render() {
     return (
       <div className='all-music'>
-        {(this.state.showEdit) ? <EditSong editedSong={this.state} updateSong={this.props.updateSong} closeEdit={this.closeEdit}/> : null}
+        {(this.state.showEdit) ? <EditSong checkCategories={this.props.checkCategories} editedSong={this.state} updateSong={this.props.updateSong} closeEdit={this.closeEdit}/> : null}
         <table className='all-music-table'>
           <thead>
             <tr>

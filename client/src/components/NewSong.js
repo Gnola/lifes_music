@@ -7,11 +7,10 @@ class NewSong extends Component {
         title:'',
         artist:'',
         album:'',
-        // genre:'',
-        energy:0,
-        what:0,
         where:[],
-        // mood:0,
+        energy:5,
+        weight:5,
+        what:5,
       }
     }
 
@@ -24,19 +23,18 @@ class NewSong extends Component {
 
     // SUBMIT
     handleSubmit = (event) => {
-      console.log(this.state);
       event.preventDefault()
-      // this.props.addSong(this.state) // App.js <--- Main.js <-- AllMusic.js <- ADD SONG (using STATE)
+      // console.log(this.state);
+      this.props.addSong(this.state) // App.js <--- Main.js <-- AllMusic.js <- ADD SONG (using STATE)
       // this.props.closeAdd() // AllMusic.js <- CLOSE ADD SONG MODAL
       this.setState({
         title:'',
         artist:'',
-        album: '',
-        // genre: '',
-        energy:0,
-        what:0,
+        album:'',
         where:[],
-        // mood:0,
+        energy:5,
+        weight:5,
+        what:5,
       })
     }
 
@@ -49,7 +47,7 @@ class NewSong extends Component {
             <label>Artist <input type='text' id='artist' value={this.state.artist} onChange={this.handleChange} placeholder='Artist'/></label>
             <label>Album <input type='text' id='album' value={this.state.album} onChange={this.handleChange} placeholder='Album'/></label>
             <label>Energy Level <input type='number' min="0" max='10' id='energy' value={this.state.energy} onChange={this.handleChange} /></label>
-            <label>Song Weight <input type='number' min="0" max='10' id='what' value={this.state.what} onChange={this.handleChange} /></label>
+            <label>Song Weight <input type='number' min="0" max='10' id='weight' value={this.state.weight} onChange={this.handleChange} /></label>
           </div>
           <div className='form-buttons'>
             <input className='button-primary' type='submit' value="Add to Music"/>
@@ -61,9 +59,8 @@ class NewSong extends Component {
 }
 
 export default NewSong;
+// <label>Optional 3rd rank <input type='number' min="0" max='10' id='what' value={this.state.what} onChange={this.handleChange} /></label>
 
-// <label>Genre<input type='text' id='genre' value={this.state.genre} onChange={this.handleChange} placeholder='Genre'/></label>
-// <label>Mood<input type='number' min="0" max='10' id='mood' value={this.state.mood} onChange={this.handleChange} /></label>
 
 // <div className='modal-container'>
 //   <div className='modals'>
