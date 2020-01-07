@@ -37,20 +37,24 @@ class App extends Component {
 
     // READ
     fetchSongs = () => {
-      fetch( `http://localhost:3000/songs` )
+      fetch( `${baseUrl}/songs` )
       .then(
         res => res.json())
       .then(
-        res => this.setState({
-          songs:res
-        }))
+        (res) => {
+          this.setState({
+            songs:res
+          })
+          console.log(this.state);
+          this.checkCategories()
+        })
       .catch(
         err => console.log(err))
     }
 
     // CREATE <- Main.js <-- AllMusic.js <--- NewSong.js
     addSong = (newSong) => {
-      fetch( `http://localhost:3000/songs`,
+      fetch( `${baseUrl}/songs`,
         { body: JSON.stringify(newSong), method: 'POST',headers: { 'Accept': 'application/json, text/plain, */*', 'Content-Type': 'application/json'}})
       .then(
         newSong => { return newSong.json() })
@@ -76,7 +80,7 @@ class App extends Component {
 
     // UPDATE WHERE ARRAY
     updateSongWithLocations = (editedSong) => {
-      fetch( `http://localhost:3000/songs/${editedSong._id}`,
+      fetch( `${baseUrl}/songs/${editedSong._id}`,
         { body: JSON.stringify(editedSong), method: 'PUT', headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'}})
       .then(
         (updatedSong) => {
@@ -90,7 +94,7 @@ class App extends Component {
 
     // DELETE <- Main.js <-- AllMusic.js <--- AllSongs.js
     deleteSongs = (id) => {
-      fetch( `http://localhost:3000/songs/${id}`,
+      fetch( `${baseUrl}/songs/${id}`,
         {
           method: 'DELETE',
           headers: {'Accept': 'application/json, text/plain, */*','Content-Type': 'application/json'}
@@ -180,9 +184,9 @@ class App extends Component {
 
   // FILL PLAYLISTS <- Main.js [ALL PLAYLISTS]
   checkCategories = () => {
-    // this.clearCategories()
+    this.clearCategories()
     for (var i = 0; i < this.state.songs.length; i++) {
-      this.state.songs[i].where = []
+      // this.state.songs[i].where = []
       if (this.state.songs[i].energy <=4 && this.state.songs[i].weight >=6) {
         // this.state.songs[i].where.push('Morning')
         this.state.morningSongs.push(this.state.songs[i])
@@ -246,6 +250,7 @@ class App extends Component {
   // CLEAR PLAYLISTS <- Main.js
   clearCategories = () => {
     this.setState({
+      songs:this.state.songs,
       morningSongs: [],
       afternoonSongs: [],
       eveningSongs: [],
