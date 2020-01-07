@@ -25,8 +25,8 @@ class Winter extends Component {
                   ))}
                 </tbody>
               </table>
-              <button className='button' id='close-button' onClick={() => this.props.showWinter}>Close</button>
             </div>
+            <button className='button' id='close-button' onClick={() => this.props.showWinter}>Close</button>
         </div>
       </div>
     );

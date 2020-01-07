@@ -25,8 +25,8 @@ class Beach extends Component {
                   ))}
                 </tbody>
               </table>
-              <button className='button' id='close-button' onClick={() => this.props.showBeach}>Close</button>
             </div>
+            <button className='button' id='close-button' onClick={() => this.props.showBeach}>Close</button>
         </div>
       </div>
     );

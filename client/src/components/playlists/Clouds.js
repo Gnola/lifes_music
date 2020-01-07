@@ -25,8 +25,8 @@ class Clouds extends Component {
                   ))}
                 </tbody>
               </table>
-              <button className='button' id='close-button' onClick={() => this.props.showClouds}>Close</button>
             </div>
+            <button className='button' id='close-button' onClick={() => this.props.showClouds}>Close</button>
         </div>
       </div>
     );

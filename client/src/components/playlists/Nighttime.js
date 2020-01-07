@@ -25,8 +25,8 @@ class Nighttime extends Component {
                   ))}
                 </tbody>
               </table>
-              <button className='button' id='close-button' onClick={() => this.props.showNighttime}>Close</button>
             </div>
+            <button className='button' id='close-button' onClick={() => this.props.showNighttime}>Close</button>
         </div>
       </div>
     );

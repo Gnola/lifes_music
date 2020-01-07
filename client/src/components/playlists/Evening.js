@@ -25,8 +25,8 @@ class Evening extends Component {
                 ))}
               </tbody>
             </table>
-            <button className='button' id='close-button' onClick={() => this.props.showEvening}>Close</button>
           </div>
+          <button className='button' id='close-button' onClick={() => this.props.showEvening}>Close</button>
         </div>
       </div>
     );

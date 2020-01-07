@@ -25,8 +25,8 @@ class Fall extends Component {
                   ))}
                 </tbody>
               </table>
-              <button className='button' id='close-button' onClick={() => this.props.showFall}>Close</button>
             </div>
+            <button className='button' id='close-button' onClick={() => this.props.showFall}>Close</button>
         </div>
       </div>
     );

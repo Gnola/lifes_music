@@ -25,8 +25,8 @@ class Rain extends Component {
                   ))}
                 </tbody>
               </table>
-              <button className='button' id='close-button' onClick={() => this.props.showRain}>Close</button>
             </div>
+            <button className='button' id='close-button' onClick={() => this.props.showRain}>Close</button>
         </div>
       </div>
     );

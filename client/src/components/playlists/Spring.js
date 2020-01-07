@@ -25,8 +25,8 @@ class Spring extends Component {
                   ))}
                 </tbody>
               </table>
-              <button className='button' id='close-button' onClick={() => this.props.showSpring}>Close</button>
             </div>
+            <button className='button' id='close-button' onClick={() => this.props.showSpring}>Close</button>
         </div>
       </div>
     );

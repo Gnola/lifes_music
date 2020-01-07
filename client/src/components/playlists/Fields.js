@@ -25,8 +25,8 @@ class Fields extends Component {
                   ))}
                 </tbody>
               </table>
-              <button className='button' id='close-button' onClick={() => this.props.showFields}>Close</button>
             </div>
+            <button className='button' id='close-button' onClick={() => this.props.showFields}>Close</button>
         </div>
       </div>
     );

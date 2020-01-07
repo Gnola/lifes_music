@@ -25,8 +25,8 @@ class Woods extends Component {
                   ))}
                 </tbody>
               </table>
-              <button className='button' id='close-button' onClick={() => this.props.showWoods}>Close</button>
             </div>
+            <button className='button' id='close-button' onClick={() => this.props.showWoods}>Close</button>
         </div>
       </div>
     );
