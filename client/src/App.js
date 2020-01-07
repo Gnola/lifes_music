@@ -281,7 +281,7 @@ class App extends Component {
           <h4>Describes how everything works</h4>
         </div>
         <NewSong addSong={this.addSong} />
-
+        <div className='space'></div>
         <Main
           location={this.location}
           songs={this.state.songs}

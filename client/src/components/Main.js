@@ -38,12 +38,11 @@ class Main extends Component {
       return (
         <div className='main'>
           <div className='main-buttons'>
-            <button className={(this.state.allMusic) ? 'button-primary' : null} onClick={this.showAllMusic}>All Music</button>
-            <button className={(this.state.allPlaylists) ? 'button-primary' : null} onClick={this.showAllPlaylists}>All Playlists</button>
+            <button className={(this.state.allMusic) ? 'button-primary' : 'button'} onClick={this.showAllMusic}>All Music</button>
+            <button className={(this.state.allPlaylists) ? 'button-primary' : 'button'} onClick={this.showAllPlaylists}>All Playlists</button>
           </div>
           {(this.state.allMusic) ?
           <AllMusic
-            location={this.props.location}
             songs={this.props.songs}
             addSong={this.props.addSong}
             updateSong={this.props.updateSong}

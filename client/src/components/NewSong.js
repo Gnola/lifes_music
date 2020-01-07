@@ -48,10 +48,9 @@ class NewSong extends Component {
             <label>Album <input type='text' id='album' value={this.state.album} onChange={this.handleChange} placeholder='Album'/></label>
             <label>Energy Level <input type='number' min="0" max='10' id='energy' value={this.state.energy} onChange={this.handleChange} /></label>
             <label>Song Weight <input type='number' min="0" max='10' id='weight' value={this.state.weight} onChange={this.handleChange} /></label>
-          </div>
-          <div className='form-buttons'>
             <input className='button-primary' type='submit' value="Add to Music"/>
           </div>
+
         </form>
       </div>
     );
@@ -59,6 +58,9 @@ class NewSong extends Component {
 }
 
 export default NewSong;
+// <div className='form-buttons'>
+// </div>
+
 // <label>Optional 3rd rank <input type='number' min="0" max='10' id='what' value={this.state.what} onChange={this.handleChange} /></label>
 
 
