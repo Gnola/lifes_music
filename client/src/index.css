@@ -11,17 +11,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   overflow-x: hidden;
-  background-position: top;
+  background-position: center;
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
 
-  /* background-image: url('https://images.pexels.com/photos/861803/pexels-photo-861803.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'); */
-  /* background-image: url('https://images.pexels.com/photos/1337753/pexels-photo-1337753.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'); */
   /* background-image: url('https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'); */
+  background-image: url('https://images.pexels.com/photos/145707/pexels-photo-145707.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
   /* background-image: url('https://images.unsplash.com/photo-1483412033650-1015ddeb83d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80'); */
-
 }
 
   /* HEADER */
@@ -36,7 +34,7 @@ body {
     justify-content: flex-end;
     align-items: flex-start;
     color: white;
-    height: 915px;
+    height: 92rem;
   }
     .header-text {
       display: flex;
@@ -59,27 +57,35 @@ body {
   .info {
     /* border: 1px solid black; */
     width: 100%;
-    height: 500px;
+    height: 68rem;
     margin: auto;
     background: white;
   }
-  .space {
+  /* .space {
     width: 100%;
     height: 75px;
     margin: auto;
     background: white;
     margin-bottom: 40%;
-  }
+  } */
 
 /* NEW SONG */
 .add-song-div {
   /* border: 2px solid blue; */
   width: 100%;
-  height: 7rem;
+  height: 12rem;
   position: sticky;
   top: 0;
   /* margin-bottom: 45%; */
 }
+  .form-fields > .button-primary {
+    width: 15%;
+    height: 4rem;
+    font-size: 10px;
+  }
+  .add-song-label {
+    font-size: 18px;
+  }
   .add-song-form {
     border: 1px solid black;
     width: 100%;
@@ -92,12 +98,15 @@ body {
     padding-bottom: .5%;
     /* margin-bottom: 5%; */
     background: white;
+    on: sticky;
+    top: 0;
     /* background: rgba(255, 255, 255, .4); */
   }
 
 /* MAIN */
 .main {
-
+  /* height: 800px; */
+  height: 13rem;
   width: 100%;
   margin: auto;
   background: white;
@@ -106,38 +115,42 @@ body {
   .main-buttons {
     display: flex;
     justify-content: center;
-    margin-top: 4%;
+    /* margin-top: 2%; */
     margin-bottom: 2%;
+    /* height: 200px; */
   }
   .main-buttons > .button-primary {
-    margin: 0px 5px 0px 5px;
+    margin: 2.5% 5px 0px 5px;
     width: 15%;
-    height: 50px;
+    height: 6rem;
+    font-size: 14px;
   }
   .main-buttons > .button {
-    margin: 0px 5px 0px 5px;
+    margin: 2.5% 5px 0px 5px;
     width: 15%;
-    height: 50px;
+    height: 6rem;
+    font-size: 14px;
   }
 
 
   /* ALL-MUSIC */
   .all-music {
     /* background-image: url('https://images.unsplash.com/photo-1483412033650-1015ddeb83d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80'); */
-    background: rgba(210,180,140,.7);
+    background: rgba(210,180,140,0);
     width: 100%;
     margin: auto;
-    height: 725px;
+    height: 800px;
     overflow: scroll;
     /* margin-bottom: 2.75%; */
   }
     .all-music-table {
-      background: rgba(210,180,140,.7);
-      width: 75%;
+      background: rgba(210,180,140,0);
+      width: 60%;
       height: 100%;
       margin: 0 auto;
       text-align: center;
       /* margin-right: 2%; */
+      margin-top: 2%;
       margin-bottom: 1%;
     }
       th {
@@ -173,7 +186,7 @@ body {
         /* font-size: 16px; */
         /* border-bottom-color: rgba(0,0,0,0.3); */
       }
-      tr:hover {
+      #song:hover {
         font-size: 18px;
       }
         .titles {
@@ -190,7 +203,12 @@ body {
           /* list-style-type: none; */
         }
         .delete {
+          background-color: rgba(0, 0, 0, 0);
+          border-bottom-color: rgba(0, 0, 0, 0);
           width: 1rem;
+        }
+        #song {
+          background: rgba(190, 190, 190, 0.5);
         }
         #delete {
           padding: 1rem;
@@ -209,28 +227,32 @@ body {
 
   /* ALL PLAYLISTS */
   .all-playlists {
-    border: 2px solid blue;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
   }
     .playlist-rows {
       border-top: 1px solid black;
-      height: 300px;
+      height: 42rem;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      width: 95%;
+      width: 120%;
       margin: auto;
     }
       .playlist-rows > h3 {
         margin-bottom: 0;
-        width: 20%;
+        margin-left: 1.5%;
+        width: 18%;
+        font-size: 4.2rem;
       }
       .playlists {
         border: 1px solid grey;
-        border-radius: 2px;
-        margin: 0px 10px 0px 10px;
-        width: 30%;
-        height: 85%;
+        border-radius: 2.5px;
+        margin: 0 3rem ;
+        width: 39rem;
+        height: 37rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -393,6 +415,7 @@ body {
     margin-top: 2%;
     display: flex;
     justify-content: space-around;
+    align-items: baseline;
     flex-wrap: wrap;
   }
   .form-buttons {

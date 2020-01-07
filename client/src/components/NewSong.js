@@ -43,11 +43,11 @@ class NewSong extends Component {
       <div className='add-song-div'>
         <form className='add-song-form' onSubmit={this.handleSubmit}>
           <div className='form-fields'>
-            <label>Title <input type='text' id='title' value={this.state.title} onChange={this.handleChange} placeholder='Song Title'/></label>
-            <label>Artist <input type='text' id='artist' value={this.state.artist} onChange={this.handleChange} placeholder='Artist'/></label>
-            <label>Album <input type='text' id='album' value={this.state.album} onChange={this.handleChange} placeholder='Album'/></label>
-            <label>Energy Level <input type='number' min="0" max='10' id='energy' value={this.state.energy} onChange={this.handleChange} /></label>
-            <label>Song Weight <input type='number' min="0" max='10' id='weight' value={this.state.weight} onChange={this.handleChange} /></label>
+            <label className='add-song-label' >Title <input type='text' id='title' value={this.state.title} onChange={this.handleChange} placeholder='Song Title'/></label>
+            <label className='add-song-label' >Artist <input type='text' id='artist' value={this.state.artist} onChange={this.handleChange} placeholder='Artist'/></label>
+            <label className='add-song-label' >Album <input type='text' id='album' value={this.state.album} onChange={this.handleChange} placeholder='Album'/></label>
+            <label className='add-song-label' >Energy Level <input type='number' min="0" max='10' id='energy' value={this.state.energy} onChange={this.handleChange} /></label>
+            <label className='add-song-label' >Song Weight <input type='number' min="0" max='10' id='weight' value={this.state.weight} onChange={this.handleChange} /></label>
             <input className='button-primary' type='submit' value="Add to Music"/>
           </div>
 
