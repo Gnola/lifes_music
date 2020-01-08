@@ -65,7 +65,7 @@ class AllMusic extends Component {
               <th className='title-header'>Title</th>
               <th className='artist-header'>Artist</th>
               <th className='album-header'>Album</th>
-              <th className='location-header'>Song Location</th>
+              <th className='location-header'>Location</th>
               <th className='delete-header'></th>
             </tr>
           </thead>

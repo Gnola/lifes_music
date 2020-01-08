@@ -127,7 +127,7 @@ class App extends Component {
       song.where.push('Afternoon')
       this.state.afternoonSongs.push(song)
     }
-    if (song.energy >=4 && song.energy <=6 && song.weight >=4 && song.weight <=7) {
+    if (song.energy >=3 && song.energy <=6 && song.weight >=4 && song.weight <=7) {
       song.where.push('Evening')
       this.state.eveningSongs.push(song)
     }
@@ -195,7 +195,7 @@ class App extends Component {
         // this.state.songs[i].where.push('Afternoon')
         this.state.afternoonSongs.push(this.state.songs[i])
       }
-      if (this.state.songs[i].energy >=4 && this.state.songs[i].energy <=6 && this.state.songs[i].weight >=4 && this.state.songs[i].weight <=7) {
+      if (this.state.songs[i].energy >=3 && this.state.songs[i].energy <=6 && this.state.songs[i].weight >=4 && this.state.songs[i].weight <=7) {
         // this.state.songs[i].where.push('Evening')
         this.state.eveningSongs.push(this.state.songs[i])
       }

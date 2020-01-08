@@ -35,6 +35,7 @@ class EditSong extends Component {
       <div className='modal-container'>
         <div className='modals'>
           <form className='forms' onSubmit={this.handleSubmit}>
+            <h2><span className='edit-title'>{this.state.title} - {this.state.artist}</span></h2>
             <label>Song <input type='text' id='title' value={this.state.title} onChange={this.handleChange} placeholder={this.state.title}/></label>
             <label>Artist <input type='text' id='artist' value={this.state.artist} onChange={this.handleChange} placeholder={this.state.artist}/></label>
             <label>Album <input type='text' id='album' value={this.state.album} onChange={this.handleChange} placeholder={this.state.album}/></label>
