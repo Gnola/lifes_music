@@ -57,10 +57,10 @@ table {
     flex-direction: column;
     align-items: center;
     margin: 9% 3% 0 0;
-    position: sticky;
-    top:0;
     font-family: "American Typewriter", Times, serif;
     color: rgba(255, 240, 220, 1);
+    /* background: rgba(66, 170, 162, .7); */
+
   }
     .header-text > h1 {
       font-size: 12rem;
@@ -77,49 +77,67 @@ table {
 
 
 .info {
-  /* border: 1px solid black; */
   width: 100%;
-  height: 54rem;
+  height: 22rem;
+  margin-bottom: 2%;
   margin: auto;
   /* background: rgba(253, 230, 184, .2);
   background: rgba(249, 235, 207, .2); */
   /* background: rgba(253, 235, 184, .6);  */
-
-  /* font-family: 'Gelasio', serif; */
   /* font-family: 'Ibarra Real Nova', serif; */
-  /* font-family: 'EB Garamond', serif; */
-  /* font-family: "American Typewriter", Times, serif; */
+  font-family: 'EB Garamond', serif;
 }
   .info > h1 {
     color: #42AAA2;
+    text-align: center;
+    margin-top: 4%;
   }
+
 
 /* NEW SONG */
 .add-song-div {
   width: 100%;
-  height: 25rem;
-  /* background: rgba(253, 230, 184, .2); */
-  /* background: rgba(249, 235, 207, .2); */
-  /* background: rgba(253, 235, 184, .6); */
-  border: 1px solid #42AAA2;
+  height: 50rem;
   color: rgba(0, 0, 0, 0.85);
-
+  background: rgba(66, 170, 162, 0);
+  /* background: rgba(66, 170, 162, .8); */
+  /* font-family: 'Gelasio', serif; */
+  font-family: 'Ibarra Real Nova', serif;
+  /* font-family: 'EB Garamond', serif; */
+  /* font-family: "American Typewriter", Times, serif; */
+  /* margin-bottom: 5%; */
 }
+  .ranking {
+    font-weight: bold;
+  }
+  .add-song-form > h5 {
+    margin-bottom: 1%;
+    /* font-style: italic; */
+  }
+  .add-song-div > h2, h4 {
+    text-align: center;
+    margin: 1% 2%;
+  }
+  #first {
+    margin-top: 1%;
+  }
+  .add-song-div > h4 {
+    text-align: center;
+    margin-bottom: 2%;
+  }
   .add-song-form {
-    /* background: rgba(253, 230, 184, .2); */
-    background: rgba(253, 235, 184, .6);
-    background: #42AAA2;
-    font-family: 'Ibarra Real Nova', serif;
+    background: rgba(66, 170, 162, .8);
+    /* font-family: 'Ibarra Real Nova', serif; */
+    /* height: 100%; */
     width: 100%;
-    height: 100%;
     margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* padding-bottom: .5%; */
   }
     .form-fields {
+      font-family: 'Ibarra Real Nova', serif;
       width: 90%;
       margin-top: 1%;
       margin-bottom: 1%;
@@ -130,7 +148,7 @@ table {
     }
     .form-fields > input[type="submit"].button-primary {
       border: 3px solid rgba(255, 240, 211, 1);
-      background: #42AAA2;
+      background: none;
       width: 15%;
       margin-top: 1%;
       height: 4.5rem;
@@ -222,7 +240,7 @@ table {
     background-image: url('https://images.unsplash.com/photo-1487180144351-b8472da7d491?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center 65%;
+    background-position: center 70%;
     background-attachment: fixed;
     width: 100%;
     height: 80.5rem;
@@ -236,7 +254,7 @@ table {
     .all-music-table {
       box-shadow: .3rem 1rem 3rem 1.3rem;
       /* background: rgba(190, 190, 190, 0.6); */
-      background: rgba(255, 209, 117, .4);
+      background: rgba(255, 209, 117, .5);
       text-align: center;
       width: 60%;
       height: 100%;
@@ -248,7 +266,7 @@ table {
       th {
         text-align: center;
         border-bottom-color: black;
-        text-decoration: underline;
+        /* text-decoration: underline; */
         padding: 0px;
         position: sticky;
         top: 0;
@@ -258,7 +276,7 @@ table {
         background: rgba(190, 190, 190, 0.5);
         border-collapse: collapse;
         height: 3.5rem;
-        font-size: 1.7rem;
+        font-size: 1.8rem;
       }
         .title-header {
           width: 20%;
@@ -374,9 +392,8 @@ table {
         color: rgba(245,245,245, .7);
       }
       .playlists {
-        border: 1px solid rgba(215,215,215, .4);
+        /* border: 1px solid rgba(215,215,215, .4); */
         border-radius: 1rem;
-        /* box-shadow: 1rem .5rem 2.5rem .5rem; */
         box-shadow: .5rem .5rem 1rem .7rem;
         margin: 0 3rem;
         width: 40rem;
@@ -424,6 +441,7 @@ table {
       }
       .playlist-modal > h2 {
         text-align: center;
+        font-size: 5rem;
       }
         .playlist-div {
           width: 100%;
@@ -448,9 +466,11 @@ table {
             padding: 0px;
             position: sticky;
             top: 0;
-            background: rgba(0,0,0,0.2);
-            color: white;
+            background: rgba(0,0,0,0.3);
+            background: rgba(190, 190, 190, .2);
+            /* color: white; */
             /* border-color: rgba(0,0,0,1); */
+            text-decoration: underline;
             height: 3rem;
           }
           .playlist-table > tbody > tr > td{
@@ -463,6 +483,7 @@ table {
             background-color: rgba(0,0,0,0.5);
             color: white;
             width: 35%;
+            font-family: 'Ibarra Real Nova', serif;
           }
 
   #morning {
@@ -560,9 +581,6 @@ table {
   }
 
   /* FORMS */
-  .edit-title {
-    /* font-style: italic; */
-  }
   .forms {
     display: flex;
     flex-direction: column;
@@ -616,42 +634,64 @@ table {
     overflow-x: hidden;
   }
   .header {
-    height: 80rem;
+    height: 81rem;
     background-position: 60%;
   }
     .header-text {
-      background-color: rgba(199, 199, 199, 0.5);
+      /* background: #42AAA2; */
       margin:  60% auto 0 auto;
       text-align: center;
-      color: black;
+      background: rgba(66, 170, 162, .7);
+      color: rgba(255, 240, 220, 1);
+      font-weight: bold;
     }
     .header-text > h1 {
       font-size: 500%;
+      font-weight: 300;
+    }
+    .header-text > h4 {
+      font-weight: 400;
+    }
+    .info {
+      height: 33rem;
+    }
+    .info > h1 {
+      margin: 3% 2% 0 2%;
     }
     .add-song-div {
-      height: 0px;
-      margin-bottom: 22rem;
+      height: 77rem;
+      margin-bottom: 0;
     }
     .add-song-form {
       width: 100%;
-      margin: 0;
-      height: 22rem;
+      margin-bottom: 1rem;
+      height: 55rem;
+      text-align: center;
+    }
+    .add-song-form > h5 {
+      margin: auto 4%;
     }
     .form-fields {
       flex-direction: column;
       align-items: center;
       width: 70%;
       margin-top: 5%;
+      z-index: 5;
+
     }
     .form-fields > input[type="submit"].button-primary {
-      background: brown;
       width: 20rem;
       height: 4.5rem;
       font-size: 10px;
     }
-    .info {
-      height: 40rem;
+    .add-song-label {
+      margin-top: 1%;
+      height: 3.5rem;
+      width: auto;
+      font-size: 16px;
+      letter-spacing: normal;
     }
+
   .main {
     width: 100%;
     height: 6rem;
@@ -660,9 +700,7 @@ table {
   .main-buttons {
     width: 100%;
     margin-top: 1%;
-    position: sticky;
-    top: 0;
-    /* margin-bottom: 5%; */
+    margin-bottom: 2%;
   }
 
   .main-buttons > .button-primary {
@@ -676,6 +714,8 @@ table {
 
   .all-music {
     width: 100%;
+    background: rgba(210,180,140,0);
+    /* margin-top: 5%; */
   }
   .all-music-table {
     height: 5%;
@@ -689,24 +729,28 @@ table {
   }
   td {
     padding: 2rem 0 2rem 0;
-    font-size: 12px;
+    font-size: 1.3rem;
   }
   label {
     margin-bottom: 0px;
     height: 50px;
     width: 100%;
+    letter-spacing: normal;
   }
-  .title {
-    width: 5%;
+  .title-header {
+    width: 10%;
   }
-  .artist {
-    width: 5%;
+  .artist-header {
+    width: 10%;
   }
-  .album {
-    width: 8%;
+  .location-header {
+    width: 12%;
   }
   .energy, .weight {
     display: none;
+  }
+  .all-playlists {
+    background: rgba(210,180,140,0);
   }
   .playlist-rows {
     width: 100%;
@@ -716,44 +760,51 @@ table {
   }
   .playlist-rows > h3 {
     width: 100%;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 5rem;
     text-align: center;
     overflow: visible;
-    font-weight: 500;
-    margin: 2% auto 1% auto;
+    /* font-weight: 400; */
+    margin: 5% auto 5% auto;
   }
   .playlists {
-    width: 80%;
+    width: 85%;
     height: 30rem;
-    margin: 3% 1%;
+    margin: 5% 0;
+    border: none;
   }
-  .playlists > h3 {
-    font-size: 5rem;
-    color: rgba(0, 0, 0, 0.7);
-  }
+    .playlists > h3 {
+      font-size: 4rem;
+      color: rgba(0, 0, 0, 0.7);
+    }
+    #clouds, #fields {
+      margin-right: 0;
+    }
   .playlist-modal {
     margin: 30% auto;
     width: 95%;
+    padding: 0 0 0 0;
   }
-  .playlist-modal > h2 {
-    font-size: 5rem;
-    /* letter-spacing: normal; */
-    margin-bottom: 1rem;
-  }
+    .playlist-modal > h2 {
+      font-size: 5rem;
+      margin-bottom: .5rem;
+      padding: .40rem;
+    }
   .playlist-div {
     overflow-y: scroll;
-    width: 95%;
+    width: 100%;
     margin: auto;
     background: rgba(255, 255, 255, 0.6);
   }
   .playlist-table {
-    width: 100%;
+    width: 98%;
   }
   .playlist-table > thead > tr > th{
-    height: 4rem;
+    height: 3rem;
   }
   .playlist-table > tbody > tr > td{
-    color: red;
-    height: .5rem;
+    height: .3rem;
+    font-size: 1.3rem;
   }
   td {
     border-bottom-color: rgba(0, 0, 0, 0.5);
@@ -765,17 +816,23 @@ table {
     display: none;
   }
   #close-button {
-    margin-top: 2%;
-    width: 90%;
+    margin-top: 0;
+    width: 100%;
+    border-top: none;
+    border-top-right-radius: .2rem;
+    border-top-left-radius: .2rem;
+    height: 4rem;
+    background-color: rgba(0,0,0,0.5);
+    font-size: 1.3rem;
+    color: whitesmoke;
+    border-color: rgba(0, 0, 0, 0);
   }
 
   .modals {
-    border: 1px solid #888;
     border-radius: 2px;
-    background-color: white;
     margin: 30% auto;
     padding: 15px;
-    width: 60%;
+    width: 80%;
     height: auto;
   }
   button {
@@ -785,6 +842,15 @@ table {
   .forms {
     margin-bottom: 0px;
   }
+  .form-fields > input[type="submit"].button-primary {
+    border: 2px solid rgba(255, 240, 211, 1);
+    background: none;
+    color: rgba(255, 240, 211, 1);
+  }
+  .form-buttons {
+    width: 70%;
+  }
+
 }
 
 

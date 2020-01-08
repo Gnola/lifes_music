@@ -41,7 +41,13 @@ class NewSong extends Component {
   render() {
     return (
       <div className='add-song-div'>
+        <h2>How it works:</h2>
+        <h4>Using the form below fill out the song title, artist and album info of any song you can think of. Then rank the song's energy level and weight on a scale from 1 - 10.</h4>
         <form className='add-song-form' onSubmit={this.handleSubmit}>
+          <h5 id='first'><span className='ranking'>Energy Level:</span> What is the energy of the song? Is it more mellow and low-key or more upbeat?</h5>
+          <h5> <span className='ranking'>1 - 5 = more mellow & low-key</span> | <span className='ranking'>5 - 10 = more upbeat & energizing</span></h5>
+          <h5><span className='ranking'>Song Weight:</span> What is the weight of the song? Does it have a heavy/darker vibe or is it more light and airy?</h5>
+          <h5> <span className='ranking'>1 - 5 = more heavy & darker</span> | <span className='ranking'>5 - 10 = more light & airy</span></h5>
           <div className='form-fields'>
             <label className='add-song-label' >Title <input type='text' id='title' value={this.state.title} onChange={this.handleChange} placeholder='Song Title'/></label>
             <label className='add-song-label' >Artist <input type='text' id='artist' value={this.state.artist} onChange={this.handleChange} placeholder='Artist'/></label>

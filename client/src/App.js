@@ -277,9 +277,9 @@ class App extends Component {
         <Header />
 
         <div className='info'>
-          <h1>How it works</h1>
-          <h4>Describes how everything works</h4>
+          <h1>Add a song to your music library and it will automatically be placed in the pre-generated playlists in the playlists tab!</h1>
         </div>
+
         <NewSong addSong={this.addSong} />
 
         <Main
