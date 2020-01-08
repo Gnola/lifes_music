@@ -570,7 +570,7 @@ table {
     margin: 8% auto;
     padding: 1.5rem;
     width: 30%;
-    height: 45rem;
+    height: 60rem;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -578,6 +578,11 @@ table {
     flex-direction: column;
     z-index: 1000;
     background: rgba(249, 235, 207, .8);
+  }
+
+  .loc {
+    height: 2rem;
+    text-decoration: underline;
   }
 
   /* FORMS */
@@ -834,6 +839,10 @@ table {
     padding: 15px;
     width: 80%;
     height: auto;
+  }
+  .loc {
+    height: 2rem;
+    text-decoration: underline;
   }
   button {
     margin-bottom: 0px;

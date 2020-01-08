@@ -41,6 +41,8 @@ class EditSong extends Component {
             <label>Album <input type='text' id='album' value={this.state.album} onChange={this.handleChange} placeholder={this.state.album}/></label>
             <label>Energy Level <input type='number' min="0" max='10' id='energy' value={this.state.energy} onChange={this.handleChange} placeholder={this.state.energy}/></label>
             <label>Song Weight <input type='number' min="0" max='10' id='weight' value={this.state.weight} onChange={this.handleChange} placeholder={this.state.weight}/></label>
+            <label className='loc'>Location(s)</label>
+            {this.state.where.map((playlist, index) => (<span key={index}> {playlist} </span>))}
             <div className='form-buttons'>
               <input className='button-primary' type='submit' value="Edit"/>
               <button onClick={this.props.closeEdit}>Cancel</button>
