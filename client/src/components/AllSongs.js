@@ -10,7 +10,7 @@ class AllMusicSongs extends Component {
         <td className='titles' id='song' onClick={() => {this.props.showEdit(this.props.song)}}>{this.props.song.title}</td>
         <td className='artists' id='song' onClick={() => {this.props.showEdit(this.props.song)}}>{this.props.song.artist}</td>
         <td className='albums' id='song' onClick={() => {this.props.showEdit(this.props.song)}}>{this.props.song.album}</td>
-        <td className='locations' id='song' onClick={() => {this.props.showEdit(this.props.song)}}>{this.props.song.where.map((playlist, index) => (<span key={index}> {playlist} |</span>))}</td>
+        <td className='locations' id='song' onClick={() => {this.props.showEdit(this.props.song)}}>{this.props.song.where.map((playlist, index) => (<span key={index}> <span>|</span> {playlist} <span>|</span></span>))}</td>
         <td className='delete'><button className='button' id='delete' onClick={() => {this.props.deleteSongs(this.props.song._id)}}>x</button></td>
       </tr>
     );
