@@ -21,16 +21,16 @@ Users can then click 'All Playlists' button to view all playlists and click on a
 
 ![Playlists](imgs/ "Playlists")
 
-If a user decides to change the rating of a song after it has been inputted they simply click the song they want to edit and re-rate it accordingly. This will then update the song's location based on its rating and will render in the playlists it now belongs to.
+If a user decides to change the rating of a song after it has been inputted they simply click the song they want to edit and re-rate it accordingly. This will then update the main library as well as the song's location(s) based on its new rating and will render in the playlist(s) it now belongs to.
 
-![Editing](imgs/ "Editing")
+![Editing](imgs/EditSong.gif "Editing")
 
 ## Behind the Scenes
 
-### Beginning
+### Sorting Function
 ![alt text](https://github.com/Gnola/MERN_Music/blob/master/imgs/CheckCategories.png "Sorting Function")
 
-###
+### Updating Data
 ![alt text](https://github.com/Gnola/MERN_Music/blob/master/imgs/CheckNew.png "Updating Data on Create and Update")
 
 ### Beginning
