@@ -19,7 +19,7 @@ Once the song is submitted it gets added to the main library (as well as the pla
 
 Users can then click 'All Playlists' button to view all playlists and click on any specific playlist to see which songs populate it.
 
-![Playlists](imgs/ "Playlists")
+![Playlists](imgs/Playlists.gif "Playlists")
 
 If a user decides to change the rating of a song after it has been inputted they simply click the song they want to edit and re-rate it accordingly. This will then update the main library as well as the song's location(s) based on its new rating and will render in the playlist(s) it now belongs to.
 
