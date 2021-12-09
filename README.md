@@ -1,7 +1,14 @@
 # [Life's Music](https://mern-music.herokuapp.com/)
 
-##### Tech Used:
-HTML / CSS / Skeleton CSS / JavaScript / MongoDB/Mongoose / Express / React / Node.js
+## Tech Used:
+- HTML
+- CSS / Skeleton CSS
+- JavaScript
+- [MongoDB](https://cloud.mongodb.com/v2/5dfc17aeff7a25bfa25c1297#clusters) / Mongoose
+- Node.js / Express
+- React
+
+#### Deployed With: [Heroku](https://dashboard.heroku.com/apps/mern-music/deploy/github)
 
 ## About the App
 As an avid music listener I make playlists for just about every occasion and am VERY particular to what music fits in certain instances such as the time of day, the weather outside and the time of year. Understanding that it becomes tiresome manually updating playlists, I wanted to implement a sort of 'algorithm' that helped generate and update these playlists automatically.
@@ -48,3 +55,8 @@ If a user decides to change the rating of a song after it has been inputted they
 
 ## Recap
 There were plenty of ideas originally planned that were thwarted so figuring out a solution when I ran into problems came to be the story of this app. There are plenty of things I wish I could've done with this app but due to the obstacles faced at the beginning I wasn't able to build it out the way I originally planned. I plan on implementing a few more features such as authentication, sorting by title, artist or album and being able to click on a playlist from the main library and having that playlist pop up. The list goes on and on but I am excited to continue working on this project and making it exactly as I had originally planned.
+
+---
+
+### Resources
+- [General Assembly Instructions](https://git.generalassemb.ly/Software-Engineering-Immersive-Remote/SEIR-Avocado-Toast/blob/master/projects/final_projects/README.md)
