@@ -33,25 +33,25 @@ If a user decides to change the rating of a song after it has been inputted they
 ## Behind the Scenes
 
 ### Sorting Function
-![alt text](_assets/imgs/CheckCategories.png "Sorting Function")
+![Sorting Function](_assets/imgs/CheckCategories.png)
 
 ### Updating Data
-![alt text](_assets/imgs/CheckNew.png "Updating Data on Create and Update")
+![Updating Data on Create and Update](_assets/imgs/CheckNew.png)
 
 ### Beginning
-![alt text](_assets/imgs/Songs1.11.35%20AM.png "Songs1")
+![Songs1](_assets/imgs/Songs1.png)
 
-![alt text](_assets/imgs/Playlists1.27.07%20PM.png "Playlists1")
+![Playlists1](_assets/imgs/Playlists1.png)
 
 ### Middle
-![alt text](_assets/imgs/Songs2.11.00%20PM.png "Songs2")
+![Songs2](_assets/imgs/Songs2.png)
 
-![alt text](_assets/imgs/Playlists2.11.08%20PM.png "Playlists2")
+![Playlists2](_assets/imgs/Playlists2.png)
 
 ### End
-![alt text](_assets/imgs/Songs5.png "Songs3")
+![Songs3](_assets/imgs/Songs5.png)
 
-![alt text](_assets/imgs/Playlists5.png "Playlists2")
+![Playlists2](_assets/imgs/Playlists5.png)
 
 ## Recap
 There were plenty of ideas originally planned that were thwarted so figuring out a solution when I ran into problems came to be the story of this app. There are plenty of things I wish I could've done with this app but due to the obstacles faced at the beginning I wasn't able to build it out the way I originally planned. I plan on implementing a few more features such as authentication, sorting by title, artist or album and being able to click on a playlist from the main library and having that playlist pop up. The list goes on and on but I am excited to continue working on this project and making it exactly as I had originally planned.
